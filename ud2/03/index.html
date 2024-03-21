@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            input{
+                padding: 5px;
+            }
+            input[required]{
+                border: 1px solid red;
+            }
+            input[type=text], input[type=url], input[type=email]{
+                background-color: grey;
+            }
+            input[type=checkbox]{
+                height: 30px;
+                width: 30px;
+            }
+            input[type=time], [type=month], [type=week]{
+                width: 150px;
+                height: 30px;
+            }
+            label{
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+            #nombre, #apellidos{
+                width: 100px;
+            }
+        </style>
+        <title>Ud2-03 Alex Asensio Sanchez</title>
+    </head>
+    <body>
+            <header>
+                <h1>Plantilla de formulario de Manga</h1>
+            </header>
+            <main>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Datos personales Para crear una cuenta</legend>
+                        <div>
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" id="nombre" name="textoNombre" minlength="1" maxlength="20" required>
+                        </div>                        
+                        <div>
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="textoApellidos" minlength="1" maxlength="40" required>
+                        </div>                        
+                        <div>
+                            <label for="correo">Email*</label>
+                            <input type="email" id="correo" name="textoCorreo" maxlength="50" minlength="1" size="22" required placeholder="xxxxx@gmail.com">
+                        </div>                        
+                        <div>
+                            <label for="link">Pagina personal</label>
+                            <input type="url" id="link" name="enlace">
+                        </div>                        
+                        <div>
+                            <label for="telefono">Telefono</label>
+                            <input type="tel" id="telefono" name="textoTelefono" placeholder="xxx-xx-xx-xx" size="7" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+                        </div>                        
+                        <div>
+                            <label for="fecha">Año de nacimiento</label>
+                            <input type="date" id="fecha" value="2000-01-01" min="1980-01-01" max="2010-01-01" name="entradaFecha">
+                        </div>                        
+                        <div>
+                            <label for="contraseña">Contraseña*</label>
+                            <input type="password" id="contraseña" name="textoContraseña" size="16" required>
+                        </div>                        
+                    </fieldset>                    
+                    <fieldset>
+                        <legend>Formulario sobre manga</legend>
+                        <div>
+                            <label for="textoManga">¿Has leido algun manga o tienes algun favorito?</label>
+                            <textarea id="textoManga" name="zonaTexto"></textarea>
+                        </div>                        
+                        <div>
+                            <label for="nota">Segun tu criterio, ¿que nota le darias? (0-10)</label>
+                            <input type="range" list="markers" id="nota" name="notaManga" min="0" max="10">
+                            <datalist id="markers">
+                                <option value="0"></option>
+                                <option value="1"></option>
+                                <option value="2"></option>
+                                <option value="3"></option>
+                                <option value="4"></option>
+                                <option value="5"></option>
+                                <option value="6"></option>
+                                <option value="7"></option>
+                                <option value="8"></option>
+                                <option value="9"></option>
+                                <option value="10"></option>
+                            </datalist>
+                        </div>                        
+                        <div>
+                            <label for="hora">¿A que hora sueles leer?</label>
+                            <input type="time" id="hora" name="horaLeer" min="07:00" max="02:00">
+                        </div>                        
+                        <div>
+                            <label for="colorLomo">Los tomos de manga tambien cuentan con un factor estetico, ¿de que color prefieres que sean los lomos?</label>
+                            <input type="color" id="colorLomo" name="iputColor">
+                        </div>                        
+                        <div>
+                            <p>¿Que demografia de manga prefieres?</p>
+                            <p><label for="idKodomo"><input type="checkbox" name="kodomo" id="idKodomo" value="KO">Kodomo (Niños)</label></p>
+                            <p><label for="idShonen"><input type="checkbox" name="shonen" id="idShonen" value="SH">Shonen (Hombres adolescentes y jovenes adultos)</label></p>
+                            <p><label for="idShoujo"><input type="checkbox" name="shoujo" id="idShoujo" value="SHOJ">Shoujo (Mujeres adolescentes y jovenes adultas)</label></p>
+                            <p><label for="idSeinen"><input type="checkbox" name="seinen" id="idSeinen" value="SE">Seinen (Hombres adultos)</label></p>
+                            <p><label for="idJosei"><input type="checkbox" name="josei" id="idJosei" value="JO">Josei (Mujeres adultas)</label></p>
+                        </div>                        
+                        <div>
+                            <p>¿Cuantos mangas has leido?</p>
+                            <p><label for="id0-5"><input type="radio" name="num" id="id0-5" checked>Entre 0 y 5</label></p>
+                            <p><label for="id5-10"><input type="radio" name="num" id="id5-10">Entre 5 y 10</label></p>
+                            <p><label for="id10+"><input type="radio" name="num" id="id10+">Mas de 10</label></p>
+                        </div>                        
+                        <div>
+                            <label for="idNum">Concretaente, ¿cuantos has leido?</label>
+                            <input type="number" id="idNum" name="numero" min="0">
+                        </div>                        
+                        <div>
+                            <label for="busqueda">Puedes usar este buscador para buscar aquellos que has leido</label>
+                            <input type="search" id="busqueda" name="buscar">
+                        </div>                        
+                        <div>
+                            <label for="mes">En que mes del año lees mas manga</label>
+                            <input type="month" id="mes" name="parteMes">
+                        </div>                        
+                        <div>
+                            <label for="semana">En que semana del año lees mas manga</label>
+                            <input type="week" id="semana" name="parteSemana">
+                        </div>                        
+                        <div>
+                            <label for="obras">Cual de estas obras te atrae mas</label>
+                            <select id="obras" name="parteObras">
+                                <option value="Vinland Saga">Vinland Saga</option>
+                                <option value="Berserk">Berserk</option>
+                                <option value="20th Century Boys">20th Century Boys</option>
+                                <option value="Vagabond">Vagabond</option>
+                                <option value="Fullmetal Alchemist">Fullmetal Alchemist</option>
+                                <option value="Hunter x Hunter">Hunter x Hunter</option>
+                            </select>
+                        </div>                        
+                        <div>
+                            <label for="foto">¿Te animas a subir una foto de tu coleccion de manga?</label>
+                            <input type="file" id="foto" name="fotoColeccion">
+                        </div>
+                    </fieldset>                     
+                    <div>
+                        <input type="reset" value="Restablecer valores">                        
+                        <input type="image" src="images/boton.png" alt="boton de enviar" height="100" width="100" >
+                        <input type="submit" hidden>
+                        <input type="hidden">
+                    </div>                   
+                </form>
+            </main>
+        <footer>
+            <p>2023-2024 Todos los derechos reservados. Alex Asensio Sanchez. Pagina actualizada: 02/11/2023</p>
+        </footer>
+    </body>
+</html>

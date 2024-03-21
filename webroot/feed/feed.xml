@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Feed de Alex Asensio Sanchez</title>
+        <category>Ejercicio</category>
+        <link>https://daw105.ieslossauces.es/</link>
+        <language>es-es</language>
+        <pubDate>Thu, 18 Jan 2024 12:09:00 +0200</pubDate>
+        <lastBuildDate>Thu, 18 Jan 2024 12:09:00 +0200</lastBuildDate>
+        <skipDays>
+            <day>Tuesday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+            <day>Sunday</day>
+        </skipDays>
+        <skipHours>            
+            <hour>0</hour>
+            <hour>1</hour>
+            <hour>2</hour>
+            <hour>3</hour>
+            <hour>4</hour>
+            <hour>5</hour>
+            <hour>6</hour>
+            <hour>7</hour>
+            <hour>8</hour>
+            <hour>14</hour>
+            <hour>15</hour>
+            <hour>16</hour>
+            <hour>17</hour>
+            <hour>18</hour>
+            <hour>19</hour>
+            <hour>20</hour>
+            <hour>21</hour>
+            <hour>22</hour>
+            <hour>23</hour>
+        </skipHours>
+        <image>
+            <link>https://daw105.ieslossauces.es/</link>
+            <title>Feed de Alex Asensio Sanchez</title>
+            <url>https://1.bp.blogspot.com/-pzGDn3Gu_6g/YU8A-9SwoHI/AAAAAAAAWWk/6CVQuaCicxUIcY7H4CONYxXZ8aPhepyQQCLcBGAsYHQ/s280/lOS%2BSAUCES.png</url>
+            <height>100</height>
+            <width>100</width>
+        </image>
+        <description>Practicas de Alex Asensio Sanchez</description>
+        <item>
+            <title>Practica 9 Formulario</title>
+            <link>https://daw105.ieslossauces.es/ud2/09/index.html</link>
+            <description>
+                Practica numero 9
+                <![CDATA[<h4>Practica de <strong>formularios</strong></h4>]]>
+            </description>
+            <guid>https://daw105.ieslossauces.es/ud2/09/index.html</guid>
+            <category>Ejercicio</category>
+            <pubDate>Mon, 11 Dec 2023 10:58:00 +0200</pubDate>
+            <enclosure url="http://192.168.2.205/webroot/media/images/CapturaP9.PNG" length="13196" type="image/png"/>
+            <source url="http://192.168.2.205/ud2/09/index.html">Mi pagina</source>
+        </item>
+        <item>
+            <title>Practica 10 Tablas</title>
+            <link>https://daw105.ieslossauces.es/ud2/10/index.html</link>
+            <description>
+                Practica numero 10
+                <![CDATA[<h4>Practica de <strong>tablas</strong></h4>]]>
+            </description>
+            <guid>https://daw105.ieslossauces.es/ud2/10/index.html</guid>
+            <category>Ejercicio</category>
+            <pubDate>Mon, 18 Dec 2023 11:00:00 +0200</pubDate>
+            <enclosure url="http://192.168.2.205/webroot/media/images/CapturaP10.PNG" length="103321" type="image/png"/>
+            <source url="http://192.168.2.205/ud2/10/index.html">Mi pagina</source>
+        </item>
+        <item>
+            <title>Practica 11 Posicionamiento</title>
+            <link>https://daw105.ieslossauces.es/ud2/11/index.html</link>
+            <description>
+                Practica numero 11
+                <![CDATA[<h4>Practica de <strong>posicionamiento</strong></h4>]]>
+            </description>
+            <guid>https://daw105.ieslossauces.es/ud2/11/index.html</guid>
+            <category>Ejercicio</category>
+            <pubDate>Fri, 22 Dec 2023 12:30:00 +0200</pubDate>
+            <enclosure url="http://192.168.2.205/webroot/media/images/CapturaP11.PNG" length="234148" type="image/png"/>
+            <source url="http://192.168.2.205/ud2/11/index.html">Mi pagina</source>
+        </item>
+        <item>
+            <title>Publicado el examen numero 2</title>
+            <link>https://daw105.ieslossauces.es</link>
+            <description>
+                Se ha publicado el examen numero 2 
+            </description>
+            <guid>https://daw105.ieslossauces.es</guid>
+            <category>Examen</category>
+            <pubDate>Tue, 06 Feb 2024 10:42:00</pubDate>
+             <source url="http://192.168.2.205/ud2/11/index.html">Mi pagina</source>
+        </item>
+    </channel>
+</rss>

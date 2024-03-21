@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Alex Noticias El Pais</title>
+        <category>News</category>
+        <link>https://elpais.com</link>
+        <language>es-es</language>
+        <skipDays>
+            <day>Saturday</day>
+            <day>Sunday</day>
+        </skipDays>
+        <skipHours>            
+            <hour>0</hour>
+            <hour>1</hour>
+            <hour>2</hour>
+            <hour>3</hour>
+            <hour>4</hour>
+            <hour>5</hour>
+            <hour>6</hour>
+            <hour>7</hour>
+            <hour>8</hour>
+        </skipHours>
+        <image>
+            <link>https://elpais.com</link>
+            <title>Alex Noticias El Pais</title>
+            <url>https://1.bp.blogspot.com/-pzGDn3Gu_6g/YU8A-9SwoHI/AAAAAAAAWWk/6CVQuaCicxUIcY7H4CONYxXZ8aPhepyQQCLcBGAsYHQ/s280/lOS%2BSAUCES.png</url>
+            <height>100</height>
+            <width>100</width>
+        </image>
+        <description>Noticias de ultima hora en España</description>
+        <item>
+            <title>Las Fuerzas Armadas han perdido el 10% de sus efectivos en las últimas dos décadas</title>
+            <link>https://elpais.com/espana/2024-01-09/las-fuerzas-armadas-han-perdido-el-10-de-sus-efectivos-en-las-ultimas-dos-decadas.html</link>
+            <description>Mandos militares advierten de que el déficit de personal se ha convertido en un problema crónico cada vez más grave
+                        <![CDATA[<h1>Esto es un codigo cdata</h1>]]></description>
+            <guid>https://elpais.com/espana/2024-01-09/las-fuerzas-armadas-han-perdido-el-10-de-sus-efectivos-en-las-ultimas-dos-decadas.html</guid>
+            <category>News</category>
+            <pubDate>Tue, 9 Jan 2024 05:40:00 +0200</pubDate>
+            <enclosure url="https://imagenes.elpais.com/resizer/F0ED3IQT6DbM5xrPoDmzQsyw8Rw=/1200x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/FZINGT7VTVFKFOHPEJ64TK6ZQU.jpg" length="232" type="image/jpg"/>
+            <source url="https://elpais.com/">El Pais</source>
+        </item>
+        <item>
+            <title>Tensa cuenta atrás para la primera gran votación de la legislatura</title>
+            <link>https://elpais.com/espana/2024-01-09/tensa-cuenta-atras-para-la-primera-gran-votacion-de-la-legislatura.html</link>
+            <description>El gobierno ve factible incorporar cambios de Junts pero no del PP
+                        <![CDATA[<h1>Esto es un codigo cdata</h1>
+                                <p>Otro?</p>]]></description>
+            <guid>https://elpais.com/espana/2024-01-09/tensa-cuenta-atras-para-la-primera-gran-votacion-de-la-legislatura.html</guid>
+            <category>News</category>
+            <pubDate>Tue, 9 Jan 2024 05:40:00 +0200</pubDate>
+            <enclosure url="https://imagenes.elpais.com/resizer/N5fmPGCS4Pd6aZmVS7hEQbUufN0=/1200x0/filters:focal(2565x670:2575x680)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/6TTYLOBKQFAYJE3RGR3HJFFK4U.jpg" length="231" type="image/jpg"/>
+            <source url="https://elpais.com/">El Pais</source>
+        </item>
+        <item>
+            <title>El PP teme que la crisis de los ‘pellets’ de plástico movilice a la izquierda en Galicia</title>
+            <link>https://elpais.com/espana/elecciones-galicia/2024-01-09/el-pp-teme-que-la-crisis-de-los-pellets-de-plastico-movilice-a-la-izquierda-en-galicia.html</link>
+            <description>Los populares desconocen por el momento el alcance del problema medioambiental
+                        <![CDATA[<h1>Esto es un codigo cdata</h1>
+                        <p>Ya no mas</p>
+                        <p>Por favor</p>]]></description>
+            <guid>https://elpais.com/espana/elecciones-galicia/2024-01-09/el-pp-teme-que-la-crisis-de-los-pellets-de-plastico-movilice-a-la-izquierda-en-galicia.html</guid>
+            <category>News</category>
+            <pubDate>Tue, 9 Jan 2024 05:40:00 +0200</pubDate>
+            <enclosure url="https://imagenes.elpais.com/resizer/7ONzYV5u4vvPRv_ktL6YQbjMkyU=/1200x0/filters:focal(2070x649:2080x659)/cloudfront-eu-central-1.images.arcpublishing.com/prisa/APFH5ZZIR5DSFKMLMUDE7KFTY4.jpg" length="221" type="image/jpg"/>
+            <source url="https://elpais.com/">El Pais</source>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,13 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+table{
+    border: 1px solid black;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+}
+tr, td, th{
+    border: 1px solid black;
+    
+}

@@ -1,0 +1,9 @@
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT fecha EMPTY>
+<!ELEMENT hecho (descripcion, fecha)>
+<!ELEMENT historia (hecho+)>
+<!ATTLIST fecha dia CDATA #REQUIRED>
+<!ATTLIST fecha mes (1|2|3|4|5|6|7|8|9|10|11|12) >
+<!ATTLIST fecha anyo CDATA "2024" #REQUIRED>
+<!ATTLIST historia xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST historia xsi:noNamespaceSchemaLocation CDATA #IMPLIED>

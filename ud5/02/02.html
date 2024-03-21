@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Tema 5 XPath Alex Asesio Sanchez</title>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <link rel="icon" type="image/x-icon" href="../../webroot/media/images/favicon.ico">
+            <link rel='stylesheet' href='../estilos.css' type="text/css">
+        </head>
+        <body>
+            <main>
+                <head>
+                    <h1>Tema 5 Xpath</h1>
+                    <h2>Ejercicio 2</h2>
+                </head>
+                <section>
+                    <div>
+                        <p>1-Los elementos de cada coche</p>
+                        <code>/garaje/coches/coche/node()</code>
+                        <p>Resultado<br><img src="images/01.png" alt="resultado 1"></p>
+                    </div>
+                    <div>
+                        <p>2-Los elementos de cada reparación</p>
+                        <code>/garaje/reparaciones/reparacion/node()</code>
+                        <p>Resultado<br><img src="images/02.png" alt="resultado 2"></p>
+                    </div>
+                    <div>
+                        <p>3-El contenido de La matrícula de los coches</p>
+                        <code>/garaje/coches/coche/matricula/text()</code>
+                        <p>Resultado<br><img src="images/03.png" alt="resultado 3"></p>
+                    </div>
+                    <div>
+                        <p>4-Todos los nodos (elementos y contenido) de los coches de la marca Renault</p>
+                        <code>//coches/coche[marca="Renault"]/node()</code>
+                        <p>Resultado<br><img src="images/04.png" alt="resultado 4"></p>
+                    </div>
+                    <div>
+                        <p>5-Todos los nodos de los coches de más de 200000 km</p>
+                        <code>//coches/coche[km>200000]/node()</code>
+                        <p>Resultado<br><img src="images/05.png" alt="resultado 5"></p>
+                    </div>
+                    <div>
+                        <p>6-El contenido del color del coche de matrícula 1234C</p>
+                        <code>//coches/coche[matricula="1234C"]/color/text()</code>
+                        <p>Resultado<br><img src="images/06.png" alt="resultado 6"></p>
+                    </div>
+                    <div>
+                        <p>7-El contenido de la descripción de las reparaciones realizadas al coche de matrícula: 4444B</p>
+                        <code>//reparaciones/reparacion[matricula="4444B"]/descripcion/text()</code>
+                        <p>Resultado<br><img src="images/07.png" alt="resultado 7"></p>
+                    </div>
+                    <div>
+                        <p>8-El contenido de la descripción de la reparación de código J0005</p>
+                        <code>//reparaciones/reparacion[@codigo="J0005"]/descripcion/text()</code>
+                        <p>Resultado<br><img src="images/08.png" alt="resultado 8"></p>
+                    </div>
+                    <div>
+                        <p>9-Suma de las horas invertidas reparando coches</p>
+                        <code>sum(//reparacion/horas)</code>
+                        <p>Resultado<br><img src="images/09.png" alt="resultado 9"></p>
+                    </div>
+                    <div>
+                        <p>10-Número de coches en el documento</p>
+                        <code>count(//coche)</code>
+                        <p>Resultado<br><img src="images/10.png" alt="resultado 10"></p>
+                    </div>
+                    <div>
+                        <p>11-Selecciona todos los elementos del primer coche</p>
+                        <code>//coche[1]/node()</code>
+                        <p>Resultado<br><img src="images/11.png" alt="resultado 11"></p>
+                    </div>
+                    <div>
+                        <p>12-Selecciona todos los elementos de la última reparación</p>
+                        <code>//reparacion[last()]/node()</code>
+                        <p>Resultado<br><img src="images/12.png" alt="resultado 12"></p>
+                    </div>
+                    <div>
+                        <p>13-Selecciona todos los elementos del coche de la marca Seat con color Rojo</p>
+                        <code>//coche[marca="Seat" and color="Rojo"]/node()</code>
+                        <p>Resultado<br><img src="images/13.png" alt="resultado 13"></p>
+                    </div>
+                    <div>
+                        <p>14-Propietario del coche modelo Polo 1.2 Advance</p>
+                        <code>//coche[modelo="Polo 1.2 Advance"]/propietario/text()</code>
+                        <p>Resultado<br><img src="images/14.png" alt="resultado 14"></p>
+                    </div>
+                    <div>
+                        <p>15-Contenido de la descripción de las reparaciones realizadas con fecha de entrada 2013/06/06</p>
+                        <code>//reparacion[fecha_entrada="2013/06/06"]/descripcion/text()</code>
+                        <p>Resultado<br><img src="images/15.png" alt="resultado 15"></p>
+                    </div>
+                    <div>
+                        <p>16-Seleccionar los coches rojos y grises</p>
+                        <code>//coche[color="Rojo" or color="Gris"]/node()</code>
+                        <p>Resultado<br><img src="images/16.png" alt="resultado 16"></p>
+                    </div>
+                    <div>
+                        <p>17-Número de coches que entraron a reparar el 2013/06/03</p>
+                        <code>count(//reparacion[fecha_entrada="2013/06/03"])</code>
+                        <p>Resultado<br><img src="images/17.png" alt="resultado 17"></p>
+                    </div>
+                    <div>
+                        <p>18-Contenido del modelo del propietario P01</p>
+                        <code>//coche[propietario="P01"]/modelo/text()</code>
+                        <p>Resultado<br><img src="images/18.png" alt="resultado 18"></p>
+                    </div>
+                    <div>
+                        <p>19-Código de la reparación con fecha de entrada 2013/06/03</p>
+                        <code>//reparacion[fecha_entrada="2013/06/03"]/@codigo</code>
+                        <p>Resultado<br><img src="images/19.png" alt="resultado 19"></p>
+                    </div>
+                    <div>
+                        <p>20-Suma de las horas de reparación del coche de matrícula 4444B</p>
+                        <code>sum(//reparacion[matricula="4444B"]/horas)</code>
+                        <p>Resultado<br><img src="images/20.png" alt="resultado 20"></p>
+                    </div>
+                    <div>
+                        <p>21-Matrícula de los coches marca Ford y Volkswagen</p>
+                        <code>//coches/coche[marca="Ford" or marca="Volkswagen"]/matricula/text()</code>
+                        <p>Resultado<br><img src="images/21.png" alt="resultado 21"></p>
+                    </div>
+                </section>
+            </main>
+        </body>
+    </html>

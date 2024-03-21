@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="actividades">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="actividad" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="codigo" type="xs:string"/>
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="fecha_inicio" type="xs:date"/>
+                            <xs:element name="sesiones">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="minutos_sesion" type="xs:int"/>
+                                        <xs:element name="sesiones_semana" type="xs:int"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="intensidad" type="xs:string"/>                                    
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>                        
+                        <xs:attribute name="nivel">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="infantil|adultos"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

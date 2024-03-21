@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="estilos.css"?>
+<!--<!DOCTYPE ejemplo SYSTEM "06.dtd">-->
+<ejemplo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="06.xsd">
+    <codigo>
+        <lenguaje>Java</lenguaje>
+        <contenido>
+            <![CDATA[
+            public class E1 {
+                public static void main(String[] args) { 
+                    System.out.println("Hola");
+                }
+            }
+            ]]>
+        </contenido>
+    </codigo>
+    <codigo>
+        <lenguaje>HTML</lenguaje>
+        <contenido>
+            <![CDATA[ 
+                <!DOCTYPE html>
+                <html>
+                    <body>
+                        <h1>Mi primera pagina web</h1>
+                        <p>A</p>
+                    </body>
+                </html>
+            ]]>
+        </contenido>
+    </codigo>
+</ejemplo>

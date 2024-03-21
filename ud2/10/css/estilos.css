@@ -1,0 +1,67 @@
+*{
+    color: white;
+}
+table{
+    border: 1px solid black;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+tr, td, th{
+    border: 1px solid black;
+    
+}
+
+header{
+    background-color: green;
+
+    display: flex;
+}
+h1{
+    padding-top: 80px;
+    margin: 0 auto;
+}
+nav{
+    background-color: green;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 30px;
+}
+#horario header{
+    margin-top: 30px;
+}
+#horario{
+    background-color: gray;
+}
+#programacion, #casillaProg{
+    background-color: orange;
+}
+#bases, #casillaBases{
+    background-color: pink;
+}
+#lenguaje, #casillaLeng{
+    background-color: rgb(199, 199, 12);
+}
+#entornos, #casillaEntornos{
+    background-color: lime;
+}
+#sistemas, #casillaSist{
+    background-color: burlywood;
+}
+#fol, #casillaFol{
+    background-color: gray;
+}
+p{
+    background-color: green;
+}
+#footer{
+    background-color: aqua;
+}

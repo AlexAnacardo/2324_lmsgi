@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE curriculum SYSTEM "04.dtd">-->
+<curriculum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="04.xsd">    
+    <datos>
+        <nombreP>Alex</nombreP>
+        <apellido>Asensio</apellido>
+        <apellido>Sanchez</apellido>
+    </datos>
+    <anyo_nacimiento>2004</anyo_nacimiento>
+    <residencia>
+        <ciudad>Benavente</ciudad>
+        <pais>España</pais>
+    </residencia>
+    <datos_contacto>
+        <telefono>123456789</telefono>
+        <correo>alexasensio04clase@gmail.com</correo>
+        <descripcion>Un makina</descripcion>
+        <competencia>
+            <nombre>Ingles EOI</nombre>
+            <nivel>C1</nivel>
+        </competencia>        
+        <formacion>
+            <titulacion>ESO</titulacion>
+            <centro>IES Leon Felipe</centro>
+            <anyo>2020</anyo>
+        </formacion>
+        <formacion>
+            <titulacion>Bachillerato</titulacion>
+            <centro>IES Leon Felipe</centro>
+            <anyo>2022</anyo>
+        </formacion>         
+    </datos_contacto>
+</curriculum>

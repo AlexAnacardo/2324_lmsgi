@@ -1,0 +1,11 @@
+*{
+    white-space: pre;
+}
+codigo::after{
+    content:'\A';
+    white-space: pre;
+}
+lenguaje{
+    color: red;
+    border: 2px solid red;
+}

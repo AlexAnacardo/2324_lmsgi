@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario">
+	<meta name="author" content="Alex Asensio Sanchez">
+	<meta name="Keywords" content="Formulario">
+	<meta name="generator" content="Visual Studio code">
+	<link rel="icon" type="image/x-icon" href="../../webroot/media/images/favicon.ico">
+	<link rel="stylesheet" href="css/estilos.css" type="text/css">
+    <title>Ud2-09 Formulario</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+                <div>
+                    <label for="marca">Marca*:</label>
+                    <input type="text" id="marca" name="textoMarca" required>
+                </div>
+                <div>
+                    <label for="modelo">Modelo*:</label>
+                    <input type="text" id="modelo" name="textoModelo" required>
+                </div>
+                <div>
+                    <label for="idNum">Año de fabricacion</label>
+                    <input type="number" id="idNum" name="numero" min="1950">
+                </div> 
+                <div>
+                    <label for="combustible">Tipo de combustible</label>
+                    <select id="combustible" name="parteCombustible">
+                        <option value="gasolina">Gasolina</option>
+                        <option value="diesel">Diesel</option>                        
+                    </select>
+                </div>
+                <div>
+                    <label for="color">Color:</label>
+                    <input type="color" id="color" name="zonaColor">
+                </div>
+                <div>
+                    <label for="kilometros">Kilometraje:</label>
+                    <input type="text" id="kiometros" name="zonaKilometros">
+                </div>
+                <div>
+                    <p>Transmsion:</p>
+                    <p><label for="idAutomatica"><input type="radio" checked name="rad" id="idAutomatica" value="AU">Automatica</label></p>
+                    <p><label for="idManual"><input type="radio" name="rad" id="idManual" value="MA">Manual</label></p>
+                </div>
+                <div>
+                    <p>Tiene Extras:</p>
+                    <p><label for="idExtras"><input type="checkbox" name="extras" id="idExtras" value="EX">Tiene extras</label></p>
+                </div>
+                <div>
+                    <label for="textoMas">Comentarios adicionales</label>
+                    <textarea id="textoMas" name="zonaTexto"></textarea>
+                </div>    
+                <input type="submit">
+                <input type="reset" value="Restablecer">
+            </fieldset>
+        </form>        
+    </main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Trabajando con tablas</title>
+		<style>
+			table{
+				border: 2px solid black;
+				text-align: center;
+				width: 100%;
+				border-collapse: collapse;
+			}
+			tr, td, th{
+				border: 2px solid black;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<table>
+				<thead>
+					<th colspan="2">Nombre y apellidos</th>
+					<th>Trabaja</th>
+					<th>Carnet</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Ana</td>
+						<td>Perez</td>
+						<td rowspan="3">Michelin</td>
+						<th rowspan="2">Si</th>
+					</tr>
+					<tr>
+						<td>Pedro</td>
+						<td>Ruiz</td>
+						
+					</tr>
+					<tr>
+						<td>Manuel</td>
+						<td>Sanchez</td>
+						<th>No</th>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="4">Fecha: 19 de octubre</td>
+					</tr>
+				</tfoot>
+			</table>
+		</main>
+		<footer>
+			<p>Alex Asensio Sanchez. Actualizado a <time datetime="2023-10-17">10/10/2023</time></p>
+		</footer>
+	</body>
+</html>

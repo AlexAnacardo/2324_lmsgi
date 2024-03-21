@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="curriculum">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="datos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombreP" type="xs:string"/>
+                            <xs:element name="apellido" type="xs:string" maxOccurs="2"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="anyo_nacimiento" type="xs:gYear"/>
+                <xs:element name="residencia">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ciudad" type="xs:string"/>
+                            <xs:element name="pais" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="datos_contacto">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="telefono" type="xs:string"/>
+                            <xs:element name="correo" type="xs:string" minOccurs="0"/>
+                            <xs:element name="perfil_linkedin" minOccurs="0"/>
+                            <xs:element name="descripcion" type="xs:string"/>
+                            <xs:element name="competencia" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="nivel" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="formacion" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="titulacion" type="xs:string"/>
+                                        <xs:element name="centro" type="xs:string"/>
+                                        <xs:element name="anyo" type="xs:gYear"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="experiencia_profesional" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="experiencia" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="puesto" type="xs:string"/>
+                                                    <xs:element name="empresa" type="xs:string"/>
+                                                    <xs:element name="anyo_inicio" type="xs:date"/>
+                                                    <xs:element name="anyo_finalizacion" type="xs:date" minOccurs="0"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,24 @@
+<!ELEMENT servicio (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>  <!--Hay dos elementos llamaos descripcion, en este caso no hay problema en que se llamen igual-->
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT fecha_actualizacion (#PCDATA)>
+<!ELEMENT sistema_operativo (#PCDATA)>
+<!ELEMENT memoria_ram (#PCDATA)>
+<!ELEMENT espacio_en_disco (#PCDATA)>
+<!ELEMENT puerto (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT comando (#PCDATA)>
+
+<!ATTLIST manual codigo CDATA #REQUIRED>
+<!ATTLIST memoria_ram medida (Gb) #REQUIRED>
+<!ATTLIST espacio_en_disco medida (Gb|Mb|Tb|Pb) #REQUIRED>
+<!ATTLIST url pagina (oficial|wiki|doc|repositorio) #REQUIRED>
+<!ATTLIST manual xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST manual xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+
+<!ELEMENT puertos_disponibles (puerto+)>
+<!ELEMENT requisitos_del_sistema (sistema_operativo,memoria_ram,espacio_en_disco,puertos_disponibles)>
+<!ELEMENT otros_datos (url*)>
+<!ELEMENT paso (comando,descripcion)>
+<!ELEMENT pasos_instalacion (paso+)>
+<!ELEMENT manual (servicio,descripcion?,version,fecha_actualizacion,requisitos_del_sistema,otros_datos,pasos_instalacion)>

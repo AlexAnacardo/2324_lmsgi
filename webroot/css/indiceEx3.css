@@ -1,0 +1,122 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: gray;  
+}
+header{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    margin-bottom: 15px;
+    background-color: gray;
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+body{
+    background-color: white;
+    width: 100%;
+}
+#botonInicio{
+    position: fixed;
+    left: 97%;
+    bottom: 30px;
+}
+h1{
+    background-image: url("../media/images/Picto_infobox_cinema.png");    
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    color: white;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+}
+h3{
+    color: goldenrod;
+    background-image: url("../media/images/Picto_infobox_cinema.png");    
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+section{
+    background-color: white;
+    padding-bottom: 4px;
+    width: 30%;
+    margin: 7px;
+}
+section ol{
+    background-color: gray;
+    padding: 10px 0px;
+}
+section li{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;    
+    padding: 17px;
+    width: 90%;
+    
+}
+section li a{
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: goldenrod;
+    color: gray;
+    padding-top:  5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 7px;
+}
+section li a:hover{
+    color: white;
+}
+nav{
+    height: 43px;
+    width: 100%;
+    margin: 10px auto;
+    background-color: gray;
+    padding: 8px 3px;
+}
+nav ul{
+    display: flex;
+    list-style: none; 
+    width: fit-content;    
+}
+nav ul li{
+    background-color: white;
+    border-radius: 0;
+    width: 60px;
+    padding: 7px;
+    margin: 4px;        
+    text-align: center;
+    margin-top: 5px;
+    
+}
+nav li:hover{
+    background-color: goldenrod;
+}
+footer{
+    display: flex;
+    background-color: gray;
+    margin-top: 10px;
+    padding: 3px 0px;
+    justify-content:space-around;
+    align-items: center;
+    background-image: url("../media/images/Picto_infobox_cinema.png");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    font-size: 110%;
+}
+footer p, footer a{
+    color: white; 
+}
+#imagenesFooter a{
+    margin: 0 20px;
+}

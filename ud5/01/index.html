@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Tema 5 XPath Alex Asesio Sanchez</title>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <link rel="icon" type="image/x-icon" href="../../webroot/media/images/favicon.ico">
+            <link rel='stylesheet' href='../estilos.css' type="text/css">
+        </head>
+        <body>
+            <main>
+                <head>
+                    <h1>Tema 5 Xpath</h1>
+                    <h2>Ejercicio 1</h2>
+                    <p><a href="../01/01.xml">Datos(XML)</a></p>
+                </head>
+                <section>
+                    <div>
+                        <p>1-Titulo de las actividades</p>
+                        <code>/actividades/actividad/titulo/text()</code>
+                        <p>Resultado<br><img src="images/01.png" alt="resultado 1"></p>
+                    </div>
+                    <div>
+                        <p>2-Mostrar el código de la actividad, título y nivel</p>
+                        <code>/actividades/actividad/codigo/text() | /actividades/actividad/titulo/text() | /actividades/actividad/@nivel</code>
+                        <p>Resultado<br><img src="images/02.png" alt="resultado 2"></p>
+                    </div>
+                    <div>
+                        <p>3-El primer título de la actividad</p>
+                        <code>/actividades/actividad[1]/titulo/text()</code>
+                        <p>Resultado<br><img src="images/03.png" alt="resultado 3"></p>
+                    </div>
+                    <div>
+                        <p>4-El último título de la actividad</p>
+                        <code>/actividades/actividad[last()]/titulo/text()</code>
+                        <p>Resultado<br><img src="images/04.png" alt="resultado 4"></p>
+                    </div>
+                    <div>
+                        <p>5-Todos los elementos descendientes de las actividades infantiles</p>
+                        <code>/actividades/actividad[@nivel="infantil"]</code>
+                        <p>Resultado<br><img src="images/05.png" alt="resultado 5"></p>
+                    </div>
+                    <div>
+                        <p>6-El nombre de las actividades para adultos</p>
+                        <code>/actividades/actividad[@nivel="adultos"]/titulo/text()</code>
+                        <p>Resultado<br><img src="images/06.png" alt="resultado 6"></p>
+                    </div>
+                    <div>
+                        <p>7-El nombre de las actividades con dos sesiones semanales</p>
+                        <code>/actividades/actividad[sesiones/sesiones_semana=2]/titulo/text()</code>
+                        <p>Resultado<br><img src="images/07.png" alt="resultado 7"></p>
+                    </div>
+                    <div>
+                        <p>8-Número de actividades</p>
+                        <code>count(//actividad)</code>
+                        <p>Resultado<br><img src="images/08.png" alt="resultado 8"></p>
+                    </div>
+                    <div>
+                        <p>9-Si queremos convertir el resultado a cadena de caracteres, podemos usar la función string()</p>
+                        <code>string(count(//actividad))</code>
+                        <p>Resultado<br><img src="images/09.png" alt="resultado 9"></p>
+                    </div>
+                    <div>
+                        <p>10- Cuenta del número de actividades infantiles</p>
+                        <code>count(//actividad[@nivel="infantil"])</code>
+                        <p>Resultado<br><img src="images/10.png" alt="resultado 10"></p>
+                    </div>
+                    <div>
+                        <p>11-Suma de las sesiones semanales de las actividades para adultos</p>
+                        <code>sum(//actividad[@nivel="adultos"]/sesiones/sesiones_semana)</code>
+                        <p>Resultado<br><img src="images/11.png" alt="resultado 11"></p>
+                    </div>
+                    <div>
+                        <p>12-Nodos de la actividad de código A06</p>
+                        <code>//actividad[codigo="A06"]/node()</code>
+                        <p>Resultado<br><img src="images/12.png" alt="resultado 12"></p>
+                    </div>
+                    <div>
+                        <p>13-Duración de las actividades con intensidad fuerte</p>
+                        <code>//actividad/sesiones[@intensidad="fuerte"]/minutos_sesion/text()</code>
+                        <p>Resultado<br><img src="images/13.png" alt="resultado 13"></p>
+                    </div>
+                    <div>
+                        <p>14-Mostrar el código de las actividades cuya duración coincide con la duración del 1º actividad</p>
+                        <code>/actividades/actividad[(sesiones/minutos_sesion/text())=(//actividad[1]/sesiones/minutos_sesion)]/codigo/text()</code>
+                        <p>Resultado<br><img src="images/14.png" alt="resultado 14"></p>
+                    </div>
+                    <div>
+                        <p>15-Título de las actividades del año 2018</p>
+                        <code>/actividades/actividad[fecha_inicio>'2017-12-31' and fecha_inicio<'2019-01-01']/titulo/text()</code>
+                        <code>//actividad[substring(fecha_inicio,1,4)="2018"]/titulo/text()</code>
+                        <p>Resultado<br><img src="images/15.png" alt="resultado 15"></p>
+                    </div>
+                </section>
+            </main>
+        </body>
+    </html>

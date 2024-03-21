@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mail SYSTEM "01.dtd">
+<mail xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="01.xsd">
+    <remitente>paco@gmail.com</remitente>
+    <destinatario>pepe@gmail.com</destinatario>
+    <destinatario>martin@gmail.com</destinatario>
+    <fecha_mensaje>2024-01-29</fecha_mensaje>    
+    <mensaje>Hola</mensaje>
+    <fichero>
+        <nombre>fichero1</nombre>
+        <tipo>image/jpg</tipo>
+    </fichero>
+    <fichero>
+        <nombre>fichero2</nombre>
+        <tipo>video/mp4</tipo>
+    </fichero>
+</mail>

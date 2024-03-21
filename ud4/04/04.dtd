@@ -1,0 +1,26 @@
+<!ELEMENT nombreP (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT anyo_nacimiento (#PCDATA)>
+<!ELEMENT ciudad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT correo (#PCDATA)>
+<!ELEMENT perfil_linkedin (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT nivel (#PCDATA)>
+<!ELEMENT titulacion (#PCDATA)>
+<!ELEMENT centro (#PCDATA)>
+<!ELEMENT anyo (#PCDATA)>
+<!ELEMENT puesto (#PCDATA)>
+<!ELEMENT empresa (#PCDATA)>
+<!ELEMENT anyo_inicio (#PCDATA)>
+<!ELEMENT anyo_finalizacion (#PCDATA)>
+<!ELEMENT datos (nombreP,apellido+)>
+<!ELEMENT residencia (ciudad,pais)>
+<!ELEMENT competencia (nombre,nivel)>
+<!ELEMENT formacion (titulacion, centro, anyo)>
+<!ELEMENT experiencia_profesional (experiencia+)>
+<!ELEMENT experiencia (puesto,empresa,anyo_inicio,anyo_finalizacion?)>
+<!ELEMENT datos_contacto (telefono,correo?,perfil_linkedin?,descripcion,competencia*,formacion*,experiencia_profesional?)>
+<!ELEMENT curriculum (datos,anyo_nacimiento,residencia,datos_contacto)>

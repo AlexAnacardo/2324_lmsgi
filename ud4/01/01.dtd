@@ -1,0 +1,11 @@
+    <!ELEMENT remitente (#PCDATA)>
+    <!ELEMENT destinatario (#PCDATA)>
+    <!ELEMENT fecha_mensaje (#PCDATA)>
+    <!ELEMENT asunto (#PCDATA)>
+    <!ELEMENT mensaje (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT tipo (#PCDATA)>    
+    <!ELEMENT fichero (nombre,tipo)>
+    <!ELEMENT mail (remitente, destinatario+, fecha_mensaje, asunto?, mensaje, fichero*)>
+    <!ATTLIST mail xmlns:xsi CDATA #IMPLIED>
+    <!ATTLIST mail xsi:noNamespaceSchemaLocation CDATA #IMPLIED>

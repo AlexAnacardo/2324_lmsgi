@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Vina+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
+/*Cuerpo*/
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+#inicioPag{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#div1{
+    margin-left: 1%;
+    width: 49%;
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    border: 3px solid black;
+    border-right: 1.5px solid black;
+}
+#div2{
+    width: 49%;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    border: 3px solid black;
+    border-left: 1.5px solid black;
+}
+#div3{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+#div4{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding-bottom: 60px;
+}
+.rojo{
+    color: red;
+}
+
+/*Encabezados*/
+#fondoAzul{
+    background-color: blue;
+    font-size: 50px;
+    color: white;
+    padding: 20px;
+    width: max-content;
+    margin-bottom: 10px;
+}
+#segundo{
+    box-shadow: 0px 0px 0px 0px;
+    width: max-content;   
+    font-size: 50px;
+}
+#seccion1{
+    background-color: cyan;
+    color: white;
+    padding: 10px;
+    transform: rotate(3deg)
+}
+#seccion2{
+    background-color: lime;
+    color: white;
+    padding: 10px;
+    transform: rotate(-3deg)
+}
+#seccion3{
+    color: white;
+    background-color: lime;
+    padding: 10px;
+    transform: rotate(-3deg)
+}
+#seccion4{
+    color: white;
+    background-color: purple;
+    padding: 10px;
+    transform: rotate(3deg)
+}
+
+/*Tablas*/
+h2{
+    font-family: 'Anton', sans-serif;
+    box-shadow: 5px 5px 0px 0px black;
+    letter-spacing: 3px;
+}
+th{
+    font-weight: normal;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    border-top: 1px solid black;;
+}
+tr {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+td{
+    background-color: white;
+}
+.cabeza{
+    background-color: green;
+    color: white;    
+    
+}
+

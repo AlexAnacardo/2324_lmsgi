@@ -1,0 +1,77 @@
+:root{
+    --color1: #c75f77; /*Color de la primera letra*/
+    --color2: #fefab6; /*Color del texto*/
+    --color3: #77a493; 
+    --color4: #836177; /*Pie de pagina*/
+    --color5: #654b49; /*Encabezado*/
+}
+/*Resetear estilos*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Header de la pagina principal*/
+header{
+    background-color: var(--color5) ;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    color: var(--color2);
+    text-align: center;
+    font-size: 2em;
+}
+h1::first-letter{
+    color: var(--color1);
+    font-size: 2.5em;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main div{
+    width: 200px;
+    height: 400px;
+    margin: 5px;
+    flex-grow: 1;
+    /*display: inline-block;*/
+    /*float: left;*/
+
+}
+main div:nth-child(1){
+    background-color: var(--color1);
+}
+main div:nth-child(2){
+    background-color: var(--color2);
+}
+main div:nth-child(3){
+    background-color: var(--color3);
+}
+main div:nth-child(4){
+    background-color: var(--color4);
+}
+main div:nth-child(5){
+    background-color: var(--color5);
+}
+/*Footer*/
+footer{
+    background-color: var(--color4);
+    color: var(--color2);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    /*clear: both;*/
+}
+footer div{
+    font-weight: bold;
+    flex-grow: 1;
+}
+footer address{
+    flex-grow: 2;
+}
+footer address em{
+    text-decoration: underline;
+}

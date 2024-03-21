@@ -1,0 +1,65 @@
+body{
+    background-image: url(../media/images/bg.png);
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+h1{
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+}
+p{
+    font-size: 20px;
+    color: white;
+    text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black, 1px 1px 1px black;
+}
+figcaption{
+    color: white;
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+}
+#youtube{
+    display: flex;
+    justify-content: center;
+}
+figure{
+    display: inline-block;
+}
+
+#imagenes{
+    text-align: center;
+    margin-top: 60px;
+}
+.video{
+    display: inline-block;
+    word-wrap: break-word;
+    width: 466px;
+    height: 280px;
+    vertical-align: top;
+    margin-bottom: 160px;
+}
+#videos{
+    text-align: center;
+    margin-top: 60px;
+
+}
+.audio{
+    display: inline-block;
+    word-wrap: break-word;
+}
+#audios{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+footer{
+    text-align: center;
+}

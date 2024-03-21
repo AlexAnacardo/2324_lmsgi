@@ -1,0 +1,91 @@
+/*Resetear estilos*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header, footer{
+    border: 1px black solid;
+}
+h1, h2, h3, h4{
+    margin: 5px;
+}
+h1{
+    font-size: 30px;
+}
+h2{
+    font-size: 25px;
+}
+h3{
+    font-size: 18;
+}
+h4{
+    font-size: 14px;
+    color: gray;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/*Menu de navegacion*/
+nav ul{
+    display: flex;    
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    color: white;
+    background-color: gray; 
+}
+nav ul li{
+    padding: 10px 5px;
+    text-transform: uppercase;
+
+}
+nav a{
+    color: white;
+}
+nav a:hover{
+    color: grey;
+}
+nav li:hover{
+    background-color: white;
+}
+/*Secciones*/
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    border: solid 1px black;
+}
+section>header{
+    /*esto hace que se aplique al header directamente
+    hijo de section*/
+    padding: 10px;
+    min-height: 5vh;
+    width: 100%;
+}
+section article{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 49%;
+    margin: 0,5%
+}
+/*Articulos*/
+figure{
+    float: left;
+}
+article footer{
+    clear: both;
+}
+img{
+    margin: 5px;
+    border: 1px;
+    padding: 2px;
+}
+figcaption{
+    font-size: 10px;
+    text-align: center;;
+}

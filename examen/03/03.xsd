@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="manual">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="servicio" type="xs:string"/>
+                <xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+                <xs:element name="version">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:float">
+                            
+                            <xs:maxInclusive value="98"/>                                                        
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="fecha_actualizacion" type="xs:date"/>
+                <xs:element name="requisitos_del_sistema">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="sistema_operativo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="Linux|Windows|MacOs"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="memoria_ram">                                                              
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:positiveInteger">                                                                                        
+                                            <xs:attribute name="medida">                                                
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:pattern value="Gb"/>
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>                                                                                    
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>                              
+                            </xs:element>
+                            <xs:element name="espacio_en_disco">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">                                            
+                                            <xs:attribute name="medida" default="Gb">                                                
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:pattern value="Gb|Mb|Tb|Pb"/>                                                        
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>                                                                                    
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType> 
+                            </xs:element>
+                            <xs:element name="puertos_disponibles">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="puerto" maxOccurs="unbounded">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:positiveInteger">
+                                                    <xs:minInclusive value="1"/>
+                                                    <xs:maxInclusive value="1024"></xs:maxInclusive>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element> 
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>                                                       
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="otros_datos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="url" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">                                            
+                                            <xs:attribute name="pagina" default="oficial">                                                
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:pattern value="oficial|wiki|doc|repositorio"/>                                                        
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:attribute>                                                                                    
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType> 
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="pasos_instalacion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="paso" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="comando" type="xs:string"/>
+                                        <xs:element name="descripcion" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">                        
+                        <xs:pattern value="[A-Z]{3}[001-999]{3}"></xs:pattern>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

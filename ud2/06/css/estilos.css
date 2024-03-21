@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header, footer{
+    background-color: #51CC92;
+}
+header{
+    text-align: center;
+    height: 20vh;
+}
+h1{
+    margin: 0 auto;
+    width: 38%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    font-size: 4em;
+    color:#F5D9B2;
+    letter-spacing: 2px;
+    border-style: solid;
+    border-color: #51CC92 #F5D9B2 #F5D9B2 #51CC92;
+    border-bottom-right-radius: 20px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    text-align: center;
+}
+main div{
+    display: inline-block;
+    border: black 7px solid;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    margin: 20px;
+    margin-right: 0px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 100px;
+    border-radius: 10%;
+}
+main div:nth-child(1){
+    background-image: url("../images/punto.png");
+    background-position: center;
+}
+main div:nth-child(2){
+    background-image: url("../images/punto.png"), url("../images/punto.png");
+    background-position: 25% 25%, 75% 75%;
+}
+main div:nth-child(3){
+    background-image: url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png");
+    background-position: 20% 20%, center, 80% 80%;
+}
+main div:nth-child(4){
+    background-image: url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png");
+    background-position: 20% 20%, 20% 80%, 80% 20%, 80% 80%;
+}
+main div:nth-child(5){
+    background-image: url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png");
+    background-position: 20% 20%, 20% 80%, center, 80% 20%, 80% 80%;
+}
+main div:nth-child(6){
+    background-image: url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png"), url("../images/punto.png");
+    background-position: 20% 20%, 20% 50%, 20% 80%, 80% 20%, 80% 50%, 80% 80%;
+}
+footer{
+    min-height: 10vh;
+    font-size: 130%;
+    color: #F5D9B2;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+footer div{
+    font-weight: bold;
+    flex-grow: 1;
+}
+footer address{
+    flex-grow: 2;
+}
+footer address em{
+    text-decoration: underline;
+}

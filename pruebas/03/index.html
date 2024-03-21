@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Explicando java</title>
+		<style>
+			code{
+				color:red;
+			}
+			samp{
+				color: green;
+			}
+			var{
+				color:blue;
+			}
+			kbd{
+				color:orange;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Trabajando con Java</h1>
+		</header>
+		<main>
+			<p>La lectura por teclado en java puede hacerse de distintas formas, una de ellas es implementando el paquete
+			   java.utils.Scanner, posteriormente deberemos crear un objeto de la clase Scanner de esta forma <code>Scanner lector=new Scanner(System.in)</code>
+			   hecho esto, ya podremos leer valores por teclado. Esto puede servirnos por ejemplo para asignar valores a variables, por ejemplo, pongamos que tenemos una variable <var>num</var>
+			   de tipo int, para asignarle un valor llamariamos al objeto que acabamos de crear de esta forma <code>num=lector.nextInt()</code>.
+			   Ya en la consola de comandos deberemos introducir un valor adecuado y preionar la tecla <kbd>enter</kbd>
+			   sin embargo debemos de tener cuidado con no introducir valores incompatibles, si la variable es un int y nosotros introducimos
+			   un float, el programa finalizara y tirara un error tal y como <samp>"input mismatch exception"</samp></p>
+			   <pre>
+Ejemplo de codigo: 				
+					<code>
+import java.util.Scanner;
+public class E1{
+	public static void main(String[] args){
+		Scanner lector=new Scanner(System.in);
+		String nombre;
+		System.out.println("Introduce tu nombre");
+		nombre=lector.nextLine();
+		System.out.println("Hola "+nombre);
+	}
+}
+					</code>
+			   </pre>
+		</main>
+		<footer>
+			<p>Alex Asensio Sanchez 05/10/2023</p>
+		</footer>
+	</body>
+</html>

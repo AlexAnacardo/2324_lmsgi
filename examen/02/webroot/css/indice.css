@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: gray;  
+}
+header{
+    width: 100%;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+body{
+    background-color: white;    
+    width: 100%;
+}
+#botonInicio{
+    position: fixed;
+    left: 97%;
+    bottom: 30px;
+}
+h1{
+    color: white;
+    background-color: gray;
+    width: 100%;
+    text-align: center;
+    
+}
+h3{
+    color: goldenrod;
+    background-image: url("../media/images/Picto_infobox_cinema.png");    
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section{
+    background-color: gray;
+    padding-bottom: 4px;
+    margin: 0 auto;
+    width: 30%;
+    margin: 3px auto;
+}
+section li{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 4px;    
+    padding: 17px;
+    width: 90%;
+    
+}
+section li a{
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: goldenrod;
+    color: gray;
+    padding-top:  5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 7px;
+}
+section li a:hover{
+    color: white;
+}
+nav{
+    height: 43px;
+    width: 100%;
+    margin: 10px auto;
+    background-color: gray;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav li{
+    background-color: white;
+    border-radius: 0;
+    width: 60px;
+    padding: 7px;
+    margin: 4px;
+}
+nav li:hover{
+    background-color: goldenrod;
+}
+footer{
+    display: flex;
+    background-color: gray;
+    margin-top: 10px;
+}
+footer p, footer a{
+    color: white;
+    margin: 10px;
+}

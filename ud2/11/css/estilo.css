@@ -1,0 +1,126 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 1024px;
+    margin: 0 auto;
+    background-image: url(../images/Le_petit_prince.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 20%;
+    background-attachment: fixed;
+}
+h1{
+    background-color: orange;
+    color: red;
+    font-variant: small-caps;
+}
+.par1{
+    background-color: aqua;
+    color: green;
+    font-weight: bold;
+    margin: 9px 0px;
+}
+
+.static{
+    border: 3px solid orange;
+    padding: 6px;
+}
+
+.relative{
+    border: 3px dotted fuchsia;
+    padding: 6px;
+    position: relative;
+    left: 60px;
+}
+
+.fixed{
+    border: 3px dashed greenyellow;
+    background-color: lightsalmon;
+    padding: 6px;
+    position: fixed;
+    bottom: 60px;
+    left: 80%;
+}
+
+.relative1{
+    border: 3px solid green;
+    padding: 6px;
+    position: relative;
+    width: 500px;
+    height: 150px;
+}
+
+.img1{
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 30%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.absolute1{
+    border: 3px solid greenyellow;
+    padding: 6px;
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    left: 200px;
+}
+
+.sticky{
+    background-color: forestgreen;
+    color: yellow;
+    border: 3px solid yellow;
+    border-radius: 15px;
+    padding: 6px;
+    text-align: center;
+    position: sticky;
+}
+
+.topleft, .topright, .bottomleft, .bottomright, .center{
+    font-variant: small-caps;
+    background-color: orange;
+    color: purple;
+    font-weight: bold;
+    border: 3px solid purple;
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    width: fit-content;
+}
+.container{
+    position: relative;
+    border: purple solid 3px;
+}
+.topleft{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+}
+.topright{
+    position: absolute;
+    top: 9px;
+    left: 923px;
+}
+.center{
+    position: absolute;
+    top: 203.5px;
+    left: 452.5px;
+}
+.bottomleft{
+    position: absolute;
+    top: 404px;
+    left: 9px;
+}
+.bottomright{
+    position: absolute;
+    top: 404px;
+    left: 900px;
+}
+.img2{
+    width: 100%;
+}

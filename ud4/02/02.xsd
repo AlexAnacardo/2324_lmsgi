@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="mundo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="region" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="continente">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="EUROPA|AMERICA|ASIA|AFRICA|OCEANIA|ANTARTIDA"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="pais" type="xs:string"/>
+                            <xs:element name="capital" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>   
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,123 @@
+/*Documento general*/
+@font-face{
+	font-family: 'Quicksand', sans-serif;
+	src: url('../fonts/Quicksand/Quicksand-VariableFont_wght.ttf');													
+			}
+			*{
+				font-family: 'Quicksand', sans-serif;
+			}
+:root{
+    --color1: #666666; 
+    --color2: #FF5733;
+    --color3: #75FF33; 
+    --color4: #33DBFF; 
+    --color5: #BD33FF; 
+}
+.negrita{
+    font-weight: bold;
+}
+body{
+    background-color: var(--color1);
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+#encabezado{
+    margin: 0 auto;
+    width: 97.5%;
+    background-image: url(../images/robot.jpeg);
+    background-color: black;
+    background-size: 10%;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 0px 0px 0px , 1px 0px 1px var(--color2), 0px 0px 0px var(--color2), 1px 1px 1px var(--color2), 1px 1px 1px var(--color2);
+    border: 7px solid #302828;
+    border-radius: 5px;
+}
+#izquierda, #derecha{
+    margin: 12px;
+    background-color: white;
+}
+/*Elementos de la izquierda*/
+#izquierda{
+    border: 5px solid var(--color2);
+    border-radius: 6px;
+    padding: 0px;
+    width: 60%;
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 50px;
+    line-height: 30px;
+}
+.cabezaNaranja{
+    color: var(--color2);
+}
+#fondoGris{
+    display: flex;
+    border: 8px solid black;
+    border-radius: 8px;
+    background-color: var(--color1);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/*Elementos de la derecha*/
+#derecha{
+    width: 35%;
+    border: 5px solid black;
+    border-radius: 6px;
+    padding: 7px;
+}
+#morado{
+    border: 5px solid var(--color5);
+    border-radius: 6px;
+    text-align: center;
+    margin: 3px;
+    margin-bottom: 50px;
+    color: var(--color5)
+}
+#verde{
+    border: 5px solid var(--color3);
+    border-radius: 6px;
+    margin: 3px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+table{
+    width: 100%;
+}
+td, th{
+    padding-right: 60px;
+}
+#verde h3{
+    color: var(--color3)
+}
+#azul{
+    border: 5px solid var(--color4);
+    border-radius: 6px;
+    margin: 3px;
+    padding: 10px;
+}
+#azul h3{
+    color: var(--color4)
+}
+/*Elimina color azul y subrayado de los links*/
+#azul a{
+    text-decoration: none;
+    color: black;
+}
+#acceso{
+    width: 23%;
+    padding: 0 6px;
+    border: 4px solid black;
+    border-radius: 7px;
+    background-color: var(--color5);
+    margin-top: 7px;
+    margin-bottom: 20px;
+    margin-right: 3px;
+}
+#acceso a{
+    text-decoration: none;
+    color: white;
+}

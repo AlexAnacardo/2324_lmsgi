@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Trabajando con formularios</title>
+	</head>
+	<body>
+		<main>
+			<form action="#" method="GET">
+				<fieldset>
+					<legend>Datos personales</legend>
+					<p>
+						<label for="idNombre">Nombre*</label>
+						<input name="Nombre" id="idNombre" type="text" placeholder="Introduce nombre" required>
+					</p>
+					<p>
+						<label for="idApellidos">Apellidos*</label>
+						<input name="Apellidos" id="idApellidos" type="text" placeholder="Introduce apellidos" required>
+					</p>
+					<p>
+						<label for="idFecha">Fecha nacimiento</label>
+						<input name="Fecha" id="idFecha" type="date" min="1980-01-01" max="2006-01-01"> 
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Estudios</legend>
+					<p><label for="idSuperior"><input type="radio" name="solo1" id="idSuperior" value="GS" checked>Grado Superior</label>
+					<p><label for="idMedio"><input type="radio" name="solo1" id="idMedio" value="GM">Grado Medio</label>
+					<p><label for="idBasica"><input type="radio" name="solo1" id="idBasica" value="FP">FP Basica</label>
+				</fieldset>
+				<fieldset>
+					<legend>Aficiones</legend>
+					<p><label for="idCine"><input type="checkbox" name="cine" id="idCine" value="cine">Cine</label></p>
+					<p><label for="idDeporte"><input type="checkbox" name="deporte" id="idDeporte" value="deporte">Deporte</label></p>
+					<p><label for="idLectura"><input type="checkbox" name="lectura" id="idLectura" value="lectura">Lectura</label></p>
+					<p><label for="idViajar"><input type="checkbox" name="viajar" id="idViajar" value="viajar">Viajar</label></p>
+					<p><label for="idOtros"><input type="checkbox" name="otros" id="idOtros" value="otros">Otros </label><input type="text" name="OpcionOtros" id="idOtros" placeholder="Otra opcion"></p>
+				</fieldset>
+				<br>
+				<input type="submit" value="Enviar">
+			</form>
+		</main>
+	</body>
+</html>

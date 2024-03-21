@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Trabajando con listas</title>	
+		<style>				
+			/*@font-face{
+				font-family: 'Nabla', sans-serif;
+				src: url('../font/Nabla/Nabla-Regular-VariableFont_EDPT\,EHLT.ttf');													
+			}
+			*{
+				font-family: 'Nabla', sans-serif;
+			}*/
+			ol{
+				border-collapse: collapse;
+			}
+			ul{
+				border-collapse: collapse;
+			}
+			li{
+				list-style-type: square;
+				border: 1px solid black;				
+			}
+		</style>
+	</head>	
+	<body>
+		<header>
+			<h1>Trabajando con listas</h1>
+		</header>
+		<main>
+		<article>
+			<header>
+				<h2>Listado de peliculas</h2>
+			</header>
+			<ol>
+				<li>Avatar</li>
+				<li>Rey Leon</li>
+				<li>Padre no hay mas que uno</li>
+			</ol>
+		</article>
+		<article>
+			<header>
+				<h2>Listado de flores</h2>
+			</header>
+			<ul>
+				<li>Pensamientos</li>
+				<li>Orquídea</li>
+				<li>Hortensias</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Informatica</h2>
+			</header>
+			<ol>
+				<li>
+					Hardware
+					<ul>
+						<li>Monitor</li>
+						<li>Teclado</li>
+						<li>Router</li>
+					</ul>
+				</li>
+				<li>
+					Software
+					<ul>
+						<li>Notepad++</li>
+						<li>Teams</li>
+						<li>NetBeans</li>
+					</ul>
+				</li>
+				
+			</ol>
+		</article>
+		<article>
+			<header>
+				<h2>Lista personalizada</h2>
+			</header>
+			<ol style="list-style-type:lower-roman">
+				<li>
+					General Aviation
+					<ol style="list-style-type: lower-latin">
+						<li>Single Aviation Aircraft</li>
+						<li>Dual Engine Aircraft</li>
+					</ol>
+				</li>
+				<li>
+					Commercial Aviationagine
+					<ul>
+						<li>Dual Engine</li>
+						<li>Tri engine</li>
+					</ul>
+				</li>
+			</ol>
+		</article>
+		<article>
+			<header>
+				<h2>Se nos fue ya</h2>
+			</header>
+			<ul style="list-style-type:square">
+				<li>
+					A
+					<ul>
+						<li>
+							B
+							<ol>
+								<li>C</li>
+								<li>D</li>
+							</ol>
+						</li>
+						<li>
+							E
+							<ul style="list-style-type:square">
+								<li>F</li>
+								<li>G</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>B</li>
+			</ul>
+		</article>
+		<article>
+			<header>
+				<h2>Termino y descripcion</h2>
+			</header>
+			<dl>
+				<dt>Dark Souls</dt>
+				<dd>Juego de genero ARPG(Action role playing game) secuela espiritual de Demon Souls y conocido por su diseño del mapa y su demandante estilo de juego. Esta fuertemente inspirado por la fantasia medieval europea y por el managa Berserk</dd>
+			</dl>
+		</article>
+		</main>
+	<footer>
+		<p>Autor: Alex Asensio Sanchez 3/10/2023</p>
+	</footer>
+	</body>
+</html>

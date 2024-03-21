@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajando con background</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        div:nth-child(1){
+            /*border-color: red;
+            border-width: 10px;
+            border-style: dashed;*/
+            border: red 10px dashed;
+        }
+        div:nth-child(2){
+            /*border-top-color: blue;
+            border-bottom-color: blue;
+            border-right-color: green;
+            border-left-color: green;
+            border-width: 10px;
+            border-top-style: double;
+            border-bottom-style: double;
+            border-right-style: groove;
+            border-left-style: groove;*/
+            border-style: double groove;
+            border-color: blue green;
+            border-width: 5px 10px;      
+        }
+        div:nth-child(3){
+            border-color: red blue green yellow;
+            border-style: dotted double dashed groove;
+            border-width: 5px 10px 20px 40px;
+        }
+        div:nth-child(2n){
+            background-image: url("../images/foto1.png"), url("../images/foto1.png");            
+            background-color: bisque;
+            width: 600px;
+            height: 600px;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
+            background-size: 25%;
+            margin: 20px;
+            padding: 20px;
+            background-position: bottom right, top left;
+        }
+        div:nth-child(2n+1){
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
