@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xml" href="../src/01.xsl"?>
+<edificio>
+    <vivienda>
+        <piso>5</piso>
+        <puerta>A</puerta>
+        <vecinos>
+            <nombre>Sara</nombre>
+            <nombre>David</nombre>
+        </vecinos>
+    </vivienda>
+    <vivienda>
+        <piso>1</piso>
+        <puerta>B</puerta>
+        <vecinos>
+            <nombre>Jaime</nombre>
+            <nombre>Luis</nombre>
+        </vecinos>
+    </vivienda>
+</edificio>
