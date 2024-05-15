@@ -30,7 +30,6 @@
             <body>
                 <header>
                     <h1>Informacion de tickets</h1>
-                    <h2>Listado de tickets</h2>
                 </header>
                 <main>
                     <xsl:apply-templates select="ticket"/>

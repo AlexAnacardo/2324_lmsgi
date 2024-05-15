@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><edificio><vivienda vivienda="5" puerta="A"/><vecinos>
+            <nombre>Sara</nombre>
+            <nombre>David</nombre>
+        </vecinos><vivienda vivienda="1" puerta="B"/><vecinos>
+            <nombre>Jaime</nombre>
+            <nombre>Luis</nombre>
+        </vecinos></edificio>

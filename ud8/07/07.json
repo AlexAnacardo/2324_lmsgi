@@ -1,0 +1,24 @@
+{
+    "usuarios":{    
+        "usuario1":{
+            "color_primer_plano": "blanco",
+            "color_fondo": "gris",
+            "tipo_fuente": "arial",
+            "tamaño_fuente": 11,
+            "negrita": false,
+            "cursiva": false,
+            "subrayado": false,
+            "idioma": "es"
+        },
+        "usuario2"{
+            "color_primer_plano": "gris",
+            "color_fondo": "blanco",
+            "tipo_fuente": "impact",
+            "tamaño_fuente": 13,
+            "negrita": false,
+            "cursiva": true,
+            "subrayado": false,
+            "idioma": "en"
+        }
+    }    
+}

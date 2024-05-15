@@ -1,0 +1,25 @@
+*{
+    margin: 0px;    
+    padding:0px;
+    font-family: Blinker-Light, Arial, sans-serif;
+}
+header{
+    background-color: #283370;
+    color: #9da7db;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p{
+    background-color: #9da7db;
+    color: #283370;
+    font-weight: bold;
+}
+ol{
+    background-color: #5c6cc4;
+    color: #283370;
+    margin-bottom: 10px;
+}
+footer{
+    text-align: center;
+}

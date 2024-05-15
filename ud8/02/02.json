@@ -1,0 +1,28 @@
+{
+    "lenguajes":[
+        {
+            "nombre": "Javascript",
+            "anyo_creacion": 1995,
+            "nombre_autores":["Brendan Eich"],
+            "compilado": true
+        },
+        {
+            "nombre": "Java",
+            "anyo_creacion": 1995,
+            "nombre_autores":["James Gosling"],
+            "compilado": true
+        },
+        {
+            "nombre": "Python",
+            "anyo_creacion": 1989,
+            "nombre_autores":["Guido Van Rossum"],
+            "compilado": false
+        },
+        {
+            "nombre": "C++",
+            "anyo_creacion": 2002,
+            "nombre_autores": ["Bjarne Stroustrup"],
+            "compilado": true
+        }
+    ]
+}

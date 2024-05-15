@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+         Autor - Created Amor Rodríguez
+         Autor - Updated  
+         Fecha - Created 12/02/2019
+         Fecha - Updated
+         File  - horario.xsd
+         Description - Examen final de LMSGI - 2º Evaluación
+-->
+
+<xs:schema version="1.0"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="horario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="curso" type="xs:string"/>
+                <xs:element name="modulos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="modulo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="sigla"/>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="profesor">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="codigo" type="xs:string"/>
+                                                    </xs:extension>
+                                                    
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="dia" maxOccurs="6">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="dia_sem" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="dia" type="xs:string"/>
+                                                
+                                            <xs:attribute name="num" type="xs:string"/>
+                                               
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="hora" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

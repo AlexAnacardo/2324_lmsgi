@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+td, th{
+    height: 1.2 em;
+    border: 1px solid black;
+    
+}

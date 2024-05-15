@@ -1,0 +1,1 @@
+Visual studio code utiliza archivos de configuracion Json, por ejemplo para tareas o para conexiones sftp

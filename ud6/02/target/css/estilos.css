@@ -1,0 +1,45 @@
+
+h1{
+    margin-left: 15px;
+    background-color: rgb(209, 203, 203);
+    color: rgb(14, 136, 14);
+}
+h2{
+    margin-left: 15px;
+    background-color: green;
+    color: rgb(209, 203, 203);
+}
+h3{
+    width: 100%;
+    border: solid 1px lime;
+    padding: 5px;
+    color: rgb(14, 136, 14);
+}
+
+article{
+    width: 100%;
+}
+table{
+    margin: 0 auto;
+    width: 50%;
+    caption-side: bottom;
+}
+caption{
+    position: bottom;
+    color: rgb(14, 136, 14);
+}
+th, td{
+    border-bottom: 1px solid black;
+}
+
+footer{
+    background-color: green;
+    color: rgb(209, 203, 203);
+    text-align: right;
+    font-size: 150%;    
+}
+
+footer div{
+    margin-right: 15px;
+    margin: 15px 15px;
+}

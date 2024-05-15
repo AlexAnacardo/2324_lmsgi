@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 Html</title>
+</head>
+<body>
+    <p id="item"></p>
+    <p id="item2"></p>
+    <p id="item3"></p>
+    <p id="item4"></p>
+    <script>
+        let cadenaJSON='{"lenguajes":[{"nombre":"Javascript","anyo_creacion":1995,"nombre_autores":["Brendan Eich"],"compilado":true},{"nombre":"Java","anyo_creacion":1995,"nombre_autores":["James Gosling"],"compilado":true},{"nombre":"Python","anyo_creacion":1989,"nombre_autores":["Guido Van Rossum"],"compilado":false},{"nombre":"C++","anyo_creacion":2002,"nombre_autores":["Bjarne Stroustrup"],"compilado":true}]}';
+        let objetoJson= JSON.parse(cadenaJSON);
+        document.getElementById("item").innerHTML=objetoJson.lenguajes[0].nombre + " " + " "+objetoJson.lenguajes[0].anyo_creacion;
+        document.getElementById("item2").innerHTML=objetoJson.lenguajes[1].nombre + " " + " "+objetoJson.lenguajes[1].anyo_creacion;
+        document.getElementById("item3").innerHTML=objetoJson.lenguajes[2].nombre + " " + " "+objetoJson.lenguajes[2].anyo_creacion;
+        document.getElementById("item4").innerHTML=objetoJson.lenguajes[3].nombre + " " + " "+objetoJson.lenguajes[3].anyo_creacion;
+    </script>
+</body>
+</html>

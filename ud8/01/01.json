@@ -1,0 +1,18 @@
+{
+    "edificio": [
+        {
+            "piso": 5,
+            "puerta": "A",
+            "vecinos":{
+                "nombre": ["Sara", "David"]
+            }
+        },
+        {
+            "piso": 1,
+            "puerta": "B",
+            "vecinos":{
+                "nombre": ["Jaime", "Luis"]
+            }
+        }
+    ]
+}

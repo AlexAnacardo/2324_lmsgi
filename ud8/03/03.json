@@ -1,0 +1,60 @@
+{
+    "nombre": "LA Lakers",
+    "color_equipacion": "amarillo",
+    "nombre_estadio": "Crypto.com arena",
+    "nombre_entrenador": "Frank Vogel",
+    "correspondePlantillaHistorica": false,
+    "referencia": "https://.......",
+    "jugadores":{
+            "base":[
+                {
+                    "nombre": "Spencer Dinwiddie",
+                    "dorsal": 26
+                },
+                {
+                    "nombre": "D'Angelo Russell",
+                    "dorsal": 1
+                },
+                {
+                    "nombre": "Austin Reaves",
+                    "dorsal": 15
+                },
+                {
+                    "nombre": "Max Christie",
+                    "dorsal": 10
+                },
+                {
+                    "nombre": "Skylar Mays",
+                    "dorsal": 4
+                },
+                {
+                    "nombre": "J. Hood-Schifi",
+                    "dorsal": 0
+                },
+                {
+                    "nombre": "Gabe Vincent",
+                    "dorsal": 7
+                }
+            ],
+            "alero":[
+                {
+                    "nombre": "alero1",
+                    "dorsal": "3"
+                },
+                {
+                    "nombre": "alero2",
+                    "dorsal": "4"
+                }
+            ],
+            "pivote":[
+                {
+                    "nombre": "pivote1",
+                    "dorsal": "5"
+                },
+                {
+                    "nombre": "pivote2",
+                    "dorsal": "6"
+                }
+            ]
+        }        
+}
