@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="ebanca">
+	<table_structure name="clientes">
+		<field Field="codigo_cliente" Type="int" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="dni" Type="int" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="nombre" Type="char(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="apellido1" Type="char(20)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="apellido2" Type="char(20)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="direccion" Type="char(50)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="region" Type="varchar(45)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="email" Type="varchar(70)" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="clientes" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="codigo_cliente" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="clientes" Non_unique="0" Key_name="idni" Seq_in_index="1" Column_name="dni" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="clientes" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="21" Create_time="2024-04-25 11:27:34" Update_time="2024-04-26 09:34:26" Collation="latin1_swedish_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_structure name="cuentas">
+		<field Field="fecha_creacion" Type="date" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="saldo" Type="int" Null="NO" Key="" Default="0" Extra="" Comment="" />
+		<field Field="cod_cuenta" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="cod_cliente" Type="int" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="cuentas" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="cod_cuenta" Collation="A" Cardinality="36" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="cuentas" Non_unique="1" Key_name="ccl" Seq_in_index="1" Column_name="cod_cliente" Collation="A" Cardinality="14" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="cuentas" Non_unique="1" Key_name="fc" Seq_in_index="1" Column_name="fecha_creacion" Collation="A" Cardinality="32" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="cuentas" Non_unique="1" Key_name="fc" Seq_in_index="2" Column_name="cod_cliente" Collation="A" Cardinality="35" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="cuentas" Non_unique="1" Key_name="cfc" Seq_in_index="1" Column_name="fecha_creacion" Collation="A" Cardinality="32" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="cuentas" Non_unique="1" Key_name="cfc" Seq_in_index="2" Column_name="cod_cliente" Collation="A" Cardinality="35" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="cuentas" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="36" Avg_row_length="455" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Create_time="2024-01-29 09:22:37" Update_time="2024-05-13 07:16:13" Collation="latin1_swedish_ci" Create_options="" Comment="" />
+	</table_structure>
+	<triggers name="cuentas">
+		<trigger Trigger="numeros_rojos" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="latin1_swedish_ci" Created="2024-01-29 10:49:25.60">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `numeros_rojos` AFTER UPDATE ON `cuentas` FOR EACH ROW begin
+	if new.saldo<0 then
+		insert into nrojos values(new.cod_cliente, new.cod_cuenta, 
+        curdate(), new.saldo);
+	end if;
+end
+]]>
+		</trigger>
+	</triggers>
+	<table_structure name="movimientos">
+		<field Field="id_movimiento" Type="int" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="fechahora" Type="date" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="cantidad" Type="double" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="dni" Type="int" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="cod_cuenta" Type="int" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="movimientos" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id_movimiento" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="movimientos" Non_unique="1" Key_name="ccuenta" Seq_in_index="1" Column_name="cod_cuenta" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="movimientos" Non_unique="1" Key_name="fk1_dni" Seq_in_index="1" Column_name="dni" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="movimientos" Non_unique="1" Key_name="fk2_ccuenta" Seq_in_index="1" Column_name="cod_cuenta" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="movimientos" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="1" Create_time="2024-01-29 09:22:37" Collation="latin1_swedish_ci" Create_options="" Comment="" />
+	</table_structure>
+	<triggers name="movimientos">
+		<trigger Trigger="bonificacion" sql_mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION" character_set_client="utf8mb4" collation_connection="utf8mb4_0900_ai_ci" Database_Collation="latin1_swedish_ci" Created="2024-01-30 13:01:43.85">
+<![CDATA[
+CREATE DEFINER=`root`@`localhost` TRIGGER `bonificacion` AFTER INSERT ON `movimientos` FOR EACH ROW begin
+		update cuentas set saldo=saldo+new.cantidad where
+		cod_cuenta=new.cod_cuenta;
+		if new.cantidad>1000 then
+			update cuentas set saldo=saldo+100 where
+			cod_cuenta=new.cod_cuenta and fecha_creacion between '2011-01-01'
+            and '2012-03-31' and fecha_creacion < date_sub(curdate(), interval 3 year);
+		end if;
+end
+]]>
+		</trigger>
+	</triggers>
+	<table_structure name="nrojos">
+		<field Field="cliente" Type="int" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="cuenta" Type="int" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="fecha" Type="date" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="saldo" Type="int" Null="YES" Key="" Extra="" Comment="" />
+		<options Name="nrojos" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="8" Avg_row_length="2048" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2024-01-29 09:28:23" Update_time="2024-05-13 07:06:55" Collation="latin1_swedish_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_structure name="tiene">
+		<field Field="dni" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="cod_cuenta" Type="int" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="tiene" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="dni" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="tiene" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="cod_cuenta" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="tiene" Non_unique="1" Key_name="dd" Seq_in_index="1" Column_name="dni" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="tiene" Non_unique="1" Key_name="fk2_tccuenta" Seq_in_index="1" Column_name="cod_cuenta" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="tiene" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Create_time="2024-01-29 09:22:37" Collation="latin1_swedish_ci" Create_options="" Comment="" />
+	</table_structure>
+</database>
+</mysqldump>

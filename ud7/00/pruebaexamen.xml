@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="pruebaexamen">
+	<table_structure name="alumno">
+		<field Field="nmat" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="nombre" Type="varchar(20)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="direccion" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="fecha_nac" Type="date" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="nota_expediente" Type="float" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="alumno" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="nmat" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="alumno" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-12-13 12:15:02" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="alumno">
+	<row>
+		<field name="nmat">1</field>
+		<field name="nombre">Alumno1</field>
+		<field name="direccion">dir1</field>
+		<field name="fecha_nac">2004-07-19</field>
+		<field name="nota_expediente">8</field>
+	</row>
+	<row>
+		<field name="nmat">2</field>
+		<field name="nombre">Alumno2</field>
+		<field name="direccion">dir2</field>
+		<field name="fecha_nac">2010-07-19</field>
+		<field name="nota_expediente">5</field>
+	</row>
+	<row>
+		<field name="nmat">3</field>
+		<field name="nombre">Alumno3</field>
+		<field name="direccion">dir3</field>
+		<field name="fecha_nac">2015-07-19</field>
+		<field name="nota_expediente">4</field>
+	</row>
+	</table_data>
+	<table_structure name="ejemplar">
+		<field Field="isbn" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="num_ejem" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="ejemplar" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="isbn" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="ejemplar" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="num_ejem" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="ejemplar" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-12-12 11:49:15" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="ejemplar">
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">1</field>
+	</row>
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">2</field>
+	</row>
+	<row>
+		<field name="isbn">2</field>
+		<field name="num_ejem">1</field>
+	</row>
+	<row>
+		<field name="isbn">3</field>
+		<field name="num_ejem">1</field>
+	</row>
+	</table_data>
+	<table_structure name="libro">
+		<field Field="isbn" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="titulo" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="autor" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="genero" Type="enum('comedia','romance','terror')" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="editorial" Type="varchar(20)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="editorial2" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="libro" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="isbn" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="libro" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-12-13 12:15:42" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="libro">
+	<row>
+		<field name="isbn">1</field>
+		<field name="titulo">Libro1</field>
+		<field name="autor">Autor1</field>
+		<field name="genero">terror</field>
+		<field name="editorial" xsi:nil="true" />
+		<field name="editorial2" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="isbn">2</field>
+		<field name="titulo">Libro2</field>
+		<field name="autor">Autor2</field>
+		<field name="genero">comedia</field>
+		<field name="editorial" xsi:nil="true" />
+		<field name="editorial2" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="isbn">3</field>
+		<field name="titulo">Libro3</field>
+		<field name="autor">Autor3</field>
+		<field name="genero">romance</field>
+		<field name="editorial" xsi:nil="true" />
+		<field name="editorial2" xsi:nil="true" />
+	</row>
+	</table_data>
+	<table_structure name="prestamo">
+		<field Field="isbn" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="num_ejem" Type="int unsigned" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="nmat" Type="int unsigned" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="fecha_prestamo" Type="date" Null="NO" Key="PRI" Extra="" Comment="" />
+		<field Field="fecha_dev" Type="date" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="prestamo" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="isbn" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="prestamo" Non_unique="0" Key_name="PRIMARY" Seq_in_index="2" Column_name="num_ejem" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<key Table="prestamo" Non_unique="0" Key_name="PRIMARY" Seq_in_index="3" Column_name="fecha_prestamo" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" Visible="YES" />
+		<options Name="prestamo" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2023-12-12 11:53:48" Collation="utf8mb4_0900_ai_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="prestamo">
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">1</field>
+		<field name="nmat">1</field>
+		<field name="fecha_prestamo">2020-01-01</field>
+		<field name="fecha_dev" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">1</field>
+		<field name="nmat">1</field>
+		<field name="fecha_prestamo">2022-10-10</field>
+		<field name="fecha_dev">2022-11-10</field>
+	</row>
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">2</field>
+		<field name="nmat">2</field>
+		<field name="fecha_prestamo">2022-12-10</field>
+		<field name="fecha_dev">2023-01-10</field>
+	</row>
+	<row>
+		<field name="isbn">1</field>
+		<field name="num_ejem">2</field>
+		<field name="nmat">1</field>
+		<field name="fecha_prestamo">2022-12-12</field>
+		<field name="fecha_dev" xsi:nil="true" />
+	</row>
+	<row>
+		<field name="isbn">2</field>
+		<field name="num_ejem">1</field>
+		<field name="nmat">3</field>
+		<field name="fecha_prestamo">2020-12-10</field>
+		<field name="fecha_dev">2020-01-10</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
