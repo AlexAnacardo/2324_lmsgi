@@ -1,0 +1,35 @@
+*{
+    text-align: center;
+}
+h1{
+    color: rgb(101, 182, 233);
+}
+
+div{
+    background-color: rgb(32, 150, 240);
+    padding: 4px;
+}
+
+h2{
+    
+    color: white;
+}
+
+table{
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+thead td{
+    background-color:rgb(101, 182, 233);
+}
+
+.min{
+    color: red;
+}
+
+.max{
+    color: blue;
+}
