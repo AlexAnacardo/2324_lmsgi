@@ -10,18 +10,18 @@
         <title>04 XSLT Alex Asensio Sanchez</title>
     </head>
     <body>
-        <table>
+        <table id="tabla1">
             <thead>
                 <tr>
-                    <th colspan="4">FACTURA NUMERO F555</th>
+                    <th colspan="4" id="azul">FACTURA NUMERO F555</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="4">DATOS EMISOR</td>
+                    <td colspan="4" class="encabezado">DATOS EMISOR</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><span class="negrita">Razon social</span>: Inform&aacute;tica Sauces</td><td colspan="2"><span>NIF/CIF</span>Q-99777000</td>
+                    <td colspan="2"><span class="negrita">Razon social</span>: Inform&aacute;tica Sauces</td><td colspan="2"><span class="negrita">NIF/CIF: </span>Q-99777000</td>
                 </tr>
                 <tr>
                     <td rowspan="3" colspan="2"><span class="negrita">Direccion</span></td><td colspan="2">Av. Federico Silva, 48</td>
@@ -39,10 +39,10 @@
                     <td colspan="2"><span class="negrita">Telefono: </span>917776688</td><td colspan="2"><span class="negrita">FAX: </span>917776688</td>
                 </tr>
                 <tr>
-                    <td colspan="4">DATOS RECEPTOR</td>
+                    <td colspan="4" class="encabezado">DATOS RECEPTOR</td>
                 </tr>
                 <tr>
-                    <td><span class="negrita"></span></td>
+                    <td colspan="4"><span class="negrita">Numero Cliente: </span>R879</td>
                 </tr>
                 <tr>
                     <td rowspan="3" colspan="2"><span class="negrita">Direccion</span></td><td colspan="2">Av. Gij&oacute;n n&ordm;1 2&ordm;d</td>
@@ -54,15 +54,44 @@
                     <td colspan="2">Madrid</td>
                 </tr>
                 <tr>
-                    <td colspan="4">RESUMEN FACTURA</td>
+                    <td colspan="4" class="encabezado">RESUMEN FACTURA</td>
                 </tr>
                 <tr>
                     <td colspan="2"><span class="negrita">Numero pedido</span>: E731</td><td><span class="negrita">Iva: </span>16%</td><td><span class="negrita">Forma de pago: </span>efectivo</td>
                 </tr>
                 <tr>
-                    <td colspan="4">IMPORTES FACTURA</td>
+                    <td colspan="2"><span class="negrita">Moneda: </span>euro</td><td colspan="2"><span class="negrita">Fecha: </span>2005-12-01</td>
                 </tr>
                 <tr>
+                    <td colspan="4" class="encabezado">DETALLES FACTURA</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table id="tabla2">
+                            <thead>
+                                <th>Ref</th><th>Descripcion</th><th>Cantidad</th><th>Precio</th><th>Importe</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MII93000F/8</td><td>Intel</td><td>1</td><td>230</td><td>266.80</td>
+                                </tr>
+                                <tr>
+                                    <td>MB8QDIP4</td><td>PLACA BASE QDI P4</td><td>1</td><td>180</td><td>208.80</td>
+                                </tr>
+                                <tr>
+                                    <td>MEDD512M32</td><td>DIMM DDR 512MB 3200</td><td>2</td><td>40</td><td>92.80</td>
+                                </tr>
+                                <tr>
+                                    <td>HD250GSA7</td><td>DISCO DURO 250GB S-ATA 7200</td><td>4</td><td>120</td><td>556.80</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="encabezado">IMPORTES FACTURA</td>
+                </tr>
+                <tr id="derecha">
                     <td colspan="2"><span class="negrita">Base:</span>970.00</td><td><span class="negrita">Cuota IVA: </span>155.20</td><td><span class="negrita">Total factura: </span>1125.20</td>
                 </tr>
             </tbody>

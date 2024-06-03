@@ -28,27 +28,31 @@
                 </xsl:call-template>   
             </head>
             <body>
-                <table>
+                <table id="tabla1">
                     <thead>
                         <tr>
-                            <th colspan="4">FACTURA NUMERO <xsl:value-of select="factura/@n_factura"/></th>
+                            <th colspan="4" id="azul">FACTURA NUMERO <xsl:value-of select="factura/@n_factura"/></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="4">DATOS EMISOR</td>
+                            <td colspan="4" class="encabezado">DATOS EMISOR</td>
                         </tr>
                         <xsl:apply-templates select="factura/datos_emisor"/>
                         <tr>
-                            <td colspan="4">DATOS RECEPTOR</td>
+                            <td colspan="4" class="encabezado">DATOS RECEPTOR</td>
                         </tr>
                         <xsl:apply-templates select="factura/datos_receptor"/>
                         <tr>
-                            <td colspan="4">RESUMEN FACTURA</td>
+                            <td colspan="4" class="encabezado">RESUMEN FACTURA</td>
                         </tr>
-                        <xsl:apply-templates select="factura/datos_factura" mode="datos"/>                                                                                                
+                        <xsl:apply-templates select="factura/datos_factura" mode="datos"/>
                         <tr>
-                            <td colspan="4">IMPORTES FACTURA</td>
+                            <td colspan="4" class="encabezado">DETALLES FACTURA</td>
+                        </tr>
+                        <xsl:apply-templates select="factura/datos_factura" mode="detalles"/>
+                        <tr>
+                            <td colspan="4" class="encabezado">IMPORTES FACTURA</td>
                         </tr>
                         <xsl:apply-templates select="factura/datos_factura" mode="total"/>
                     </tbody>
@@ -59,7 +63,7 @@
     <xsl:template match="factura/datos_emisor">
         <tr>
             <td colspan="2"><span class="negrita">Razon social</span>: <xsl:value-of select="nombre"/></td>
-            <td colspan="2"><span>NIF/CIF</span> <xsl:value-of select="cif"/></td>
+            <td colspan="2"><span class="negrita">NIF/CIF: </span> <xsl:value-of select="cif"/></td>
         </tr>
         <tr>
             <td rowspan="3" colspan="2"><span class="negrita">Direccion</span></td>
@@ -81,7 +85,7 @@
     </xsl:template>
     <xsl:template match="factura/datos_receptor">
         <tr>
-            <td><span class="negrita"/><xsl:value-of select="@n_ci"/></td>
+            <td colspan="4"><span class="negrita">Numero Cliente: </span><xsl:value-of select="@n_cli"/></td>
         </tr>
         <tr>
             <td rowspan="3" colspan="2"><span class="negrita">Direccion</span></td>
@@ -100,11 +104,41 @@
             <td><span class="negrita">Iva: </span><xsl:value-of select="@iva"/>%</td>
             <td><span class="negrita">Forma de pago: </span><xsl:value-of select="@f_pago"/></td>
         </tr>
+        <tr>
+            <td colspan="2"><span class="negrita">Moneda: </span><xsl:value-of select="@moneda"/></td>
+            <td colspan="2"><span class="negrita">Fecha: </span><xsl:value-of select="fecha"/></td>
+        </tr>
     </xsl:template>
     
+    <xsl:template match="factura/datos_factura" mode="detalles">
+        <tr>     
+            <td colspan="4">
+            <table id="tabla2">
+                <thead>
+                    <th>Ref</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Importe</th>
+                </thead>
+                <tbody>
+                    <xsl:for-each select="linea">
+                        <tr>
+                            <td><xsl:value-of select="ref"/></td>
+                            <td><xsl:value-of select="desc"/></td>
+                            <td><xsl:value-of select="cant"/></td>
+                            <td><xsl:value-of select="precio"/></td>
+                            <td><xsl:value-of select="importe"/></td>
+                        </tr>                    
+                    </xsl:for-each>
+                </tbody>
+            </table>  
+            </td>                 
+        </tr>
+    </xsl:template>
     
     <xsl:template match="factura/datos_factura" mode="total">
-        <tr>
+        <tr id="derecha">
             <td colspan="2"><span class="negrita">Base:</span><xsl:value-of select="base"/></td>
             <td><span class="negrita">Cuota IVA: </span><xsl:value-of select="cuota_iva"/></td>
             <td><span class="negrita">Total factura: </span><xsl:value-of select="total"/></td>

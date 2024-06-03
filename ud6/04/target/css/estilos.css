@@ -4,8 +4,8 @@
 }
 
 table{
-    border-collapse: collapse;
-    
+    border-collapse: collapse;    
+    width: 100%;
 }
 
 .negrita{
@@ -17,3 +17,23 @@ td, th{
     border: 1px solid black;
     
 }
+
+#tabla2{
+    width: 99.8%;     
+    margin: 0.1%;    
+}
+
+#azul{
+    color: blue;
+    font-weight: bolder;
+}
+
+.encabezado{
+    color: rgb(136, 29, 56);
+    font-weight: bold;
+}
+
+#derecha{
+    text-align: right;
+}
+

@@ -1,0 +1,5 @@
+Bases de Datos OO mensual 40
+Bases de Datos OR anual 320
+Bases de Datos XML trimestral 80
+Programaciï¿½n Java mensual 30
+Programaciï¿½n en PHP mensual 50
