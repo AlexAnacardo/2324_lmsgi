@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Unidad 7&period; XQUERY</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="unidad-7-xquery">Unidad 7. XQUERY</h1>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<ol>
+<li>Lista el título de los libros ordenados por título.</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(:Consulta 1 Lista libros:)</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)/bookstore/book
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$x</span>/title
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado01.txt">Muestra libros</a></p>
+</blockquote>
+<ol start="2">
+<li>Lista el título de los libros ordenados por título cuyo precio es superior a 30</li>
+<li></li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(:Consulta 2 Lista libros precio superior a 30:)</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)/bookstore/book
+<span class="hljs-keyword">where</span> <span class="hljs-variable">$x</span>/price&gt;<span class="hljs-number">30</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$x</span>/title
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado02.txt">Muestra libros precio &gt; 30</a></p>
+</blockquote>
+<ol start="3">
+<li>Crea una página web (03.html) cuyo título de la web “UD7-01.03 Listado de libros. Nombre y
+apellidos” y que contenga una lista con viñetas con los títulos de los libros</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(:Consulta 3 Lista libros precio&gt;30 en html:)</span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Lista de libros<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><span class="language-xml">
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      </span><span class="language-xquery">{
+        <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)/bookstore/book
+        <span class="hljs-keyword">where</span> <span class="hljs-variable">$x</span>/price&gt;<span class="hljs-number">30</span>
+        <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$x</span>/title
+        <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><span class="language-xml">
+      }
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span>
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado03.html">Muestra libros precio &gt; 30 en html</a></p>
+</blockquote>
+<ol start="4">
+<li>Crea un documento XML(04.html), donde el elemento raíz es libros. Y si la categoría del libro es
+children el título aparece entre las etiquetas <children></children> y en caso contrario aparece con la etiqueta
+<adult></adult></li>
+</ol>
+<pre><code class="language-xq"> <span class="hljs-comment">(:Consulta 4 Xml:)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libros</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)//book
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">if</span>(<span class="hljs-variable">$x</span>/@category=<span class="hljs-string">&#x27;children&#x27;</span>)
+  <span class="hljs-keyword">then</span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">children</span>&gt;</span>
+      </span><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">children</span>&gt;</span></span>
+  <span class="hljs-keyword">else</span>
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">adult</span>&gt;</span>
+      </span><span class="language-xquery"><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">adult</span>&gt;</span></span>
+}
+&lt;/libros&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado04.xml">Ordenar libros por categoria</a></p>
+</blockquote>
+<ol start="5">
+<li>Crea una página web (05.html), que contenga todos los libros con su categoría, en la lista aparece
+distintos colores el título en función de la categoría</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(:Consulta 5 Listado Tabla:)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Tabla de libros<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><span class="language-xml">   
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/estilos.css&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><span class="language-xml">
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+      </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+        </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+          </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Titulo<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span><span class="language-xml">
+            </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Categoría<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span><span class="language-xml">
+          <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><span class="language-xml">    
+        <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span></span><span class="language-xml">
+        </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+            </span><span class="language-xquery">{
+              <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)/bookstore/book          
+              <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><span class="language-xml">
+                </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="language-xquery"><span class="language-xquery">{<span class="hljs-variable">$x</span>/@category/data()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><span class="language-xml">
+              <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><span class="language-xml">
+            }    
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span></span><span class="language-xml">        
+      <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></span><span class="language-xml">
+      
+      </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        </span><span class="language-xquery"><span class="language-xquery">{
+          <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&#x27;books&#x27;</span>)/bookstore/book          
+            <span class="hljs-keyword">return</span> &lt;li class=<span class="hljs-string">&quot;{$x/@category/data()}</span></span></span><span class="language-xml">&quot;&gt;</span><span class="language-xquery"><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><span class="language-xml">
+        }
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span>
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado05.xml">Tabla y lista de libros con css</a></p>
+</blockquote>
+<ol start="6">
+<li>Lista de libros ordenados por categoría de forma descendiente, y como segundo criterio por título
+de forma descendiente. Mostrando el título con suprecio precio, donde el precio es mayor que 30 $.
+El resultado (06.txt) es un fichero de texto</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 6 :)</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">where</span> <span class="hljs-variable">$x</span>/price&gt;<span class="hljs-number">30</span>
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$x</span>/@category <span class="hljs-keyword">descending</span>
+<span class="hljs-keyword">return</span>
+ <span class="hljs-built_in"> concat</span>(<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>(),<span class="hljs-string">&quot;:&quot;</span>,
+  <span class="hljs-variable">$x</span>/price/<span class="hljs-type">text</span>())
+
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado06.txt">libros con precio &gt; 30 ordenados</a></p>
+</blockquote>
+<ol start="7">
+<li>Uso de at, for variable1 at variable2 expresiónXpath, siendo la segunda variable la posición de
+cada nodo. Genera el siguiente archivo XML</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 7 :)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">books</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">at</span> <span class="hljs-variable">$y</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+  <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">book</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$y</span>}</span></span><span class="language-xml">. </span><span class="language-xquery"><span class="language-xquery">{data(<span class="hljs-variable">$x</span>/title)}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span></span>
+}
+&lt;/books&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado07.xml">xml con incremento de numero</a></p>
+</blockquote>
+<ol start="8">
+<li>Uso de variables expresiones en un for $tema in (lista de valores), $y in (lista de valores). Para
+indicar la lista de valor de valorinicial to valorfinal, por ejemplo 1 to 100
+Generar automáticamente la siguiente página web</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 8 :)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Ud7-8 Alex Asensio Sanchez<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><span class="language-xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/estilos.css&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><span class="language-xml">
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+      </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Listado de practicas<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span><span class="language-xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></span><span class="language-xml">
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+      </span><span class="language-xquery">{
+        <span class="hljs-keyword">for</span> <span class="hljs-variable">$tema</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span> <span class="hljs-keyword">to</span> <span class="hljs-number">8</span>), <span class="hljs-variable">$y</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+        <span class="hljs-keyword">return</span>
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;</span></span></span><span class="language-xquery"><span class="hljs-built_in">{concat</span>(<span class="hljs-variable">$tema</span>,<span class="hljs-string">&quot;/&quot;</span>,<span class="hljs-variable">$y</span>,<span class="hljs-string">&quot;.html&quot;</span>)}</span></span><span class="language-xml">&quot;&gt;Tema: </span><span class="language-xquery"><span class="language-xquery">{<span class="hljs-variable">$tema</span>}</span></span><span class="language-xml"> Ejercicio: </span><span class="language-xquery"><span class="language-xquery">{<span class="hljs-variable">$y</span>}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><span class="language-xml">
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><span class="language-xml">        
+      }
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></span>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado08.html">Uso de bucles</a></p>
+</blockquote>
+<ol start="9">
+<li>Mostrar el título del libro cuando tenga más de dos autores</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 9 :)</span>
+
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">where</span><span class="hljs-built_in"> count</span>(<span class="hljs-variable">$x</span>/author)&gt;<span class="hljs-number">2</span>
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado09.txt">Libros &gt; 2 autores</a></p>
+</blockquote>
+<ol start="10">
+<li>Trasformar los datos a un archivo XML con el siguiente contenido, donde el atributo autores indica
+el número de autores de cada libro:</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 10 :)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libros</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+    <span class="hljs-keyword">return</span> &lt;libro autores=<span class="hljs-string">&quot;{count($x/author)}</span></span><span class="language-xml">&quot;&gt;</span><span class="language-xquery"><span class="hljs-string">{$x/title/text()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">libro</span>&gt;</span></span>
+  }
+&lt;/libros&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado10.xml">Xml libros y autores</a></p>
+</blockquote>
+<ol start="11">
+<li>
+<p>Mostrar el título y el autor de los libros del año 2005, y etiquetar cada uno de ellos con “lib2005”</p>
+<pre><code class="language-xq"></code></pre>
+</li>
+</ol>
+<p>(: Consulta 11 :)</p>
+<libros>
+  {
+    for $x in doc("books")/bookstore/book
+    where $x/year=2005 return
+    <lib2005>
+      <titulo>{$x/title/text()}</titulo>
+      <autor>{$x/author/text()}</autor>
+    </lib2005>
+  }
+</libros>
+```
+<blockquote>
+<p>Resultado: <a href="resultado11.xml">Xml libros del año 2005</a></p>
+</blockquote>
+<ol start="12">
+<li>Mostrar los años de publicación, primero con for y luego con let. Etiquetar la salida con publicación</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 12 :)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">publicacion</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book 
+  <span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/year
+}</span><span class="language-xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">publicacion</span>&gt;</span></span>
+
+
+<span class="hljs-keyword">let</span> <span class="hljs-variable">$x</span> :=<span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/year
+<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">publicacion</span>&gt;</span></span><span class="language-xquery">{ <span class="hljs-variable">$x</span> }</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">publicacion</span>&gt;</span></span>
+
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado12.xml">Xml años publicacion con for y let</a></p>
+</blockquote>
+<ol start="13">
+<li>Mostrar los libros ordenador primero por “category” y luego por “title” en una sola consulta</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 13 :)</span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libros</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$x</span>/@category, <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+  <span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>
+}</span><span class="language-xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">libros</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado13.xml">Xml libros ordenados por categoria y titulo</a></p>
+</blockquote>
+<ol start="14">
+<li>Mostrar cuántos libros hay, y etiquetarlo con “total”</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 14 :)</span>
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">total</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore
+    <span class="hljs-keyword">return</span><span class="hljs-built_in"> count</span>(<span class="hljs-variable">$x</span>/book)
+  }</span><span class="language-xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">total</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado14.xml">Xml total de libros</a></p>
+</blockquote>
+<ol start="15">
+<li>Mostrar los títulos de los libros y al final una etiqueta con el número total de libros</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-comment">(: Consulta 15 :)</span>
+
+
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libros</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">$y</span> :<span class="hljs-built_in">=count</span>(<span class="hljs-variable">$x</span>/book)
+    <span class="hljs-keyword">return</span> (<span class="hljs-variable">$x</span>/book/title, <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">total</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$y</span>}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">total</span>&gt;</span></span>)
+  }
+&lt;/libros&gt;
+
+
+<span class="hljs-comment">(:
+&lt;libros&gt;
+  {
+    for $x in doc(&quot;books&quot;)/bookstore/book
+    return &lt;libro&gt;{$x/title/text()}&lt;/libro&gt;
+  }
+  {
+    for $x in doc(&quot;books&quot;)/bookstore
+    let $y := count($x/book)
+    return &lt;total&gt;{$y}&lt;/total&gt;
+  }
+&lt;/libros&gt;
+:)</span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado15.xml">Xml titulos y total</a></p>
+</blockquote>
+<ol start="16">
+<li>Mostrar el precio mínimo y el máximo de los libros</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultado</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">$x</span> :=<span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+    <span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">minimo</span>&gt;</span></span><span class="language-xquery"><span class="hljs-built_in">{min</span>(<span class="hljs-variable">$x</span>/price)}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">minimo</span>&gt;</span></span>,<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">maximo</span>&gt;</span></span><span class="language-xquery"><span class="language-xquery"><span class="hljs-built_in">{max</span>(<span class="hljs-variable">$x</span>/price)}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">maximo</span>&gt;</span></span>)
+  }
+&lt;/resultado&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado16.xml">Precio maximo y minimo</a></p>
+</blockquote>
+<ol start="17">
+<li>Mostrar el título del libro, su precio y su precio con el IVA incluido, cada uno con su propia etiqueta.
+Ordenado de precio con IVA</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libros</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+    <span class="hljs-keyword">let</span> <span class="hljs-variable">$iva</span> := <span class="hljs-variable">$x</span>/price*<span class="hljs-number">1.21</span>
+    <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-variable">$iva</span>
+    <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libro</span>&gt;</span></span><span class="language-xquery"><span class="hljs-built_in">{concat</span>(<span class="hljs-variable">$x</span>/title,<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-variable">$x</span>/price,<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-variable">$iva</span>)}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">libro</span>&gt;</span></span>
+  }
+&lt;/libros&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado17.xml">Titulo, precio, precio+iva</a></p>
+</blockquote>
+<ol start="18">
+<li>Mostrar la suma total de los precios con la etiqueta total</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">total</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">let</span> <span class="hljs-variable">$t</span> :=<span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/price
+  <span class="hljs-keyword">return</span><span class="hljs-built_in"> sum</span>(<span class="hljs-variable">$t</span>)
+}</span><span class="language-xml">
+<span class="hljs-tag">&lt;/<span class="hljs-name">total</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado18.xml">Suma total productos</a></p>
+</blockquote>
+<ol start="19">
+<li>Mostrar cada uno de los precios de los libros , y al final una etiqueta con la suma de los precios</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultado</span>&gt;</span>
+  </span><span class="language-xquery">{
+    <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)//book
+    <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">precio</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/price/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">precio</span>&gt;</span></span>
+  }
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">total</span>&gt;</span>
+    </span><span class="language-xquery"><span class="language-xquery">{
+      <span class="hljs-keyword">let</span> <span class="hljs-variable">$t</span> :=<span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/price
+      <span class="hljs-keyword">return</span><span class="hljs-built_in"> sum</span>(<span class="hljs-variable">$t</span>)
+    }</span></span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">total</span>&gt;</span></span>
+&lt;/resultado&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado19.xml">Precio individual+precio total</a></p>
+</blockquote>
+<ol start="20">
+<li>Mostrar el título y el número de autores que tiene cada título en etiquetas diferentes</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">resultado</span>&gt;</span>
+</span><span class="language-xquery">{
+  <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+  <span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">titulo</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">titulo</span>&gt;</span></span>,<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">autores</span>&gt;</span></span><span class="language-xquery"><span class="language-xquery"><span class="hljs-built_in">{count</span>(<span class="hljs-variable">$x</span>/author)}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">autores</span>&gt;</span></span>)
+}
+&lt;/resultado&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado20.xml">Titulo y numero de autores</a></p>
+</blockquote>
+<ol start="21">
+<li>Mostrar en la misma etiqueta el título y entre paréntesis el número de autores que tiene ese título</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">salida</span>&gt;</span></span><span class="language-xquery"><span class="hljs-built_in">{concat</span>(<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>(),<span class="hljs-string">&quot; &quot;</span><span class="hljs-built_in">,count</span>(<span class="hljs-variable">$x</span>/author))}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">salida</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado21.xml">Titulo y numero de autores en 1 etiqueta</a></p>
+</blockquote>
+<ol start="22">
+<li>Mostrar los libros escritos en años que terminan en “3”</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span> (<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">where</span><span class="hljs-built_in"> substring</span>(<span class="hljs-variable">$x</span>/year,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>)=<span class="hljs-string">&quot;3&quot;</span>
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado22.txt">Libros escritos en años terminados en 3</a></p>
+</blockquote>
+<ol start="23">
+<li>Mostrar los libros cuya categoría empiece por C</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span> (<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">where</span><span class="hljs-built_in"> substring</span>(<span class="hljs-variable">$x</span>/@category,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)=<span class="hljs-string">&quot;c&quot;</span>
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado23.txt">Libros cuya categoria empieza por c</a></p>
+</blockquote>
+<ol start="24">
+<li>Mostrar los libros que contenga una X mayúscula o minúscula en el título ordenados de manera descendente</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span> (<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+<span class="hljs-keyword">where</span><span class="hljs-built_in"> contains</span><span class="hljs-built_in">(upper-case</span>(<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()),<span class="hljs-string">&quot;X&quot;</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado24.txt">Libros con x en el titulo</a></p>
+</blockquote>
+<ol start="25">
+<li>Mostrar el título y el número de caracteres que tiene cada título, cada uno con su propia etiqueta</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span> (<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/title
+<span class="hljs-keyword">return</span> (<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">libro</span>&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">titulo</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/<span class="hljs-type">text</span>()}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">titulo</span>&gt;</span></span><span class="language-xml">,</span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">caracteres</span>&gt;</span></span><span class="language-xquery"><span class="hljs-built_in">{string-length</span>(<span class="hljs-variable">$x</span>)}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">caracteres</span>&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">libro</span>&gt;</span></span>)
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado25.xml">Titulo y numero de caracteres</a></p>
+</blockquote>
+<ol start="26">
+<li>Mostrar todos los años en los que se ha publicado un libro eliminando los repetidos. Etiquétalos con &quot;año&quot;</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">let</span> <span class="hljs-variable">$x</span> :=<span class="hljs-built_in"> distinct-values</span><span class="hljs-built_in">(doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/year)
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$y</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$x</span>
+<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">autor</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$y</span>}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">autor</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado26.xml">Años con libros publicados</a></p>
+</blockquote>
+<ol start="27">
+<li>Mostrar todos los autores eliminando los que se repiten y ordenados por el número de caracteres que tiene cada autor</li>
+</ol>
+<pre><code class="language-xq"><span class="hljs-keyword">let</span> <span class="hljs-variable">$x</span> :=<span class="hljs-built_in"> distinct-values</span><span class="hljs-built_in">(doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book/author/<span class="hljs-type">text</span>())
+<span class="hljs-keyword">for</span> <span class="hljs-variable">$y</span> <span class="hljs-keyword">in</span> <span class="hljs-variable">$x</span>
+<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">autor</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$y</span>}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">autor</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado27.xml">autores distintos</a></p>
+</blockquote>
+<ol start="28">
+<li>Mostrar los títulos en una tabla de HTML</li>
+</ol>
+<pre><code class="language-xq"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Ud7-27 Alex Asensio Sanchez<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><span class="language-xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><span class="language-xml">
+  </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+      </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Listado de libros<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span><span class="language-xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></span><span class="language-xml">
+    </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+      </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+        </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+          </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Libros<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span></span><span class="language-xml">
+          <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><span class="language-xml">
+        <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span></span><span class="language-xml">
+        </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+          </span><span class="language-xquery">{
+            <span class="hljs-keyword">for</span> <span class="hljs-variable">$x</span> <span class="hljs-keyword">in</span><span class="hljs-built_in"> doc</span>(<span class="hljs-string">&quot;books&quot;</span>)/bookstore/book
+            <span class="hljs-keyword">return</span>
+            <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+              </span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span></span><span class="language-xquery">{<span class="hljs-variable">$x</span>/title/<span class="hljs-type">text</span>()}</span></span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span></span><span class="language-xml">
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span></span><span class="language-xml">
+          }
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span></span><span class="language-xml">
+      <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span></span><span class="language-xml">      
+    <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span></span>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p>Resultado: <a href="resultado28.htm">Titulos en tabla</a></p>
+</blockquote>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
