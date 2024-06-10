@@ -1,0 +1,227 @@
+<!DOCTYPE html> 
+<html lang="es">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="description" content="informacion de tickets">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Alex Asensio Sanchez">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <title>Examen Alex Asensio Sanchez</title>
+    </head>
+    <body>
+        <div id="botones">
+            <p>
+                <a href="#prov">Proveedor</a>
+            </p>
+            <p>
+                <a href="#prod">Productos</a>
+            </p>
+            <p>
+                <a href="#proy">Proyectos</a>
+            </p>
+            <p>
+                <a href="#sumi">Suministros</a>
+            </p>
+            <p>
+                <a href="#estad">Estadistica</a>
+            </p>
+        </div>
+        <div id="contenido">
+            <article id="prov">
+                <header>
+                    <h2>Proveedores</h2>
+                </header>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre(Num Proveedor)</th><th>Estado</th><th>Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smith(v1)</td><td>20</td><td>Londres</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>10</td><td>Paris</td>
+                        </tr>
+                        <tr>
+                            <td>Blake(v3)</td><td>30</td><td>Paris</td>
+                        </tr>
+                        <tr>
+                            <td>Clarke(v4)</td><td>20</td><td>Londres</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>30</td><td>Atenas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article id="prod">
+                <header>
+                    <h2>Productos</h2>
+                </header>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre(Num Producto)</th><th>Color</th><th>Peso</th><th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tuerca(p1)</td><td>Rojo</td><td>12</td><td>Londres</td>
+                        </tr>
+                        <tr>
+                            <td>Perno(p2)</td><td>Verde</td><td>17</td><td>Paris</td>
+                        </tr>
+                        <tr>
+                            <td>Tornillo(p3)</td><td>Azul</td><td>17</td><td>Roma</td>
+                        </tr>
+                        <tr>
+                            <td>Tornillo(p4)</td><td>Rojo</td><td>14</td><td>Londres</td>
+                        </tr>
+                        <tr>
+                            <td>Leva(p5)</td><td>Azul</td><td>12</td><td>Paris</td>
+                        </tr>
+                        <tr>
+                            <td>Engranaje(p6)</td><td>Rojo</td><td>19</td><td>Londres</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article id="proy">
+                <header>
+                    <h2>Proyectos</h2>
+                </header>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre(Num Proyecto)</th><th>Ciudad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Clasificador(y1)</td><td>Paris</td>
+                        </tr>
+                        <tr>
+                            <td>Monitor(y2)</td><td>Roma</td>
+                        </tr>
+                        <tr>
+                            <td>OCR(y3)</td><td>Atenas</td>
+                        </tr>
+                        <tr>
+                            <td>Consola(y4)</td><td>Atenas</td>
+                        </tr>
+                        <tr>
+                            <td>RAID(y5)</td><td>Londres</td>
+                        </tr>
+                        <tr>
+                            <td>EDS(y6)</td><td>Oslo</td>
+                        </tr>
+                        <tr>
+                            <td>Cinta(y7)</td><td>Londres</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article id="sumi">
+                <header>
+                    <h2>Suministra</h2>
+                </header>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre(Num Proyecto)</th><th>Producto(Num Prod)</th><th>Proyecto(Num Proy)</th><th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Smith(v1)</td><td>Tuerca(p1)</td><td>Clasificador(y1)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Smith(v1)</td><td>Tuerca(p1)</td><td>Consola(y4)</td><td>700</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>Clasificador(y1)</td><td>400</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>Monitor(y2)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>OCR(y3)</td><td>300</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>Consola(y4)</td><td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>RAID(y5)</td><td>600</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>EDS(y6)</td><td>400</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Tornillo(p3)</td><td>Cinta(y7)</td><td>600</td>
+                        </tr>
+                        <tr>
+                            <td>Jones(v2)</td><td>Leva(p5)</td><td>Monitor(y2)</td><td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Blake(v3)</td><td>Tornillo(p3)</td><td>Clasificador(y1)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Blake(v3)</td><td>Tornillo(p4)</td><td>Monitor(y2)</td><td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Clarke(v4)</td><td>Engranaje(p6)</td><td>OCR(y3)</td><td>300</td>
+                        </tr>
+                        <tr>
+                            <td>Clarke(v4)</td><td>Engranaje(p6)</td><td>Cinta(y7)</td><td>300</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Perno(p2)</td><td>Monitor(y2)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Perno(p2)</td><td>Consola(y4)</td><td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Leva(p5)</td><td>RAID(y5)</td><td>500</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Engranaje(p6)</td><td>Monitor(y2)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Tuerca(p1)</td><td>Consola(y4)</td><td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Tornillo(p3)</td><td>Consola(y4)</td><td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Tornillo(p4)</td><td>Consola(y4)</td><td>800</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Leva(p5)</td><td>Consola(y4)</td><td>400</td>
+                        </tr>
+                        <tr>
+                            <td>Adams(v5)</td><td>Engranaje(p6)</td><td>Consola(y4)</td><td>500</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>x/23</td><td>x/23</td><td>x/23</td><td>8300</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+            <article id="estad">
+                <header>
+                    <h2>Numero de productos / vendedor</h2>
+                </header>
+                <p>v1: 2 suministros</p>
+                <p>v2: 8 suministros</p>
+                <p>v3: 2 suministros</p>
+                <p>v4: 2 suministros</p>
+                <p>v5: 9 suministros</p>
+            </article>
+        </div>
+    </body>
+</html>
